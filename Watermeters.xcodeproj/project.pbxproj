@@ -1,0 +1,333 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17E4D51A0F41DADC002440E9 /* LocationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E4D5190F41DADC002440E9 /* LocationsView.xib */; };
+		17E4D51E0F41DB7E002440E9 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */; };
+		17E4D56D0F41E212002440E9 /* RestfulObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D56C0F41E212002440E9 /* RestfulObject.m */; };
+		17E4D5A80F41F628002440E9 /* AbstractRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5A70F41F628002440E9 /* AbstractRequest.m */; };
+		17E4D5B90F41FC8A002440E9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5B80F41FC8A002440E9 /* WebService.m */; };
+		17E4D5BC0F41FC97002440E9 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5BB0F41FC97002440E9 /* Stack.m */; };
+		17E4D5CE0F4201BC002440E9 /* LocationsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5CD0F4201BC002440E9 /* LocationsRequest.m */; };
+		17E4D5D20F420216002440E9 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E4D5D10F420216002440E9 /* SettingsView.xib */; };
+		17E4D5D60F420250002440E9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5D50F420250002440E9 /* SettingsViewController.m */; };
+		17E4D6440F421BF9002440E9 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6430F421BF9002440E9 /* Settings.m */; };
+		17E4D6A10F42255A002440E9 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6A00F42255A002440E9 /* Location.m */; };
+		1D3623260D0F684500981E51 /* WatermetersAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
+		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		17E4D5190F41DADC002440E9 /* LocationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationsView.xib; sourceTree = "<group>"; };
+		17E4D51C0F41DB7E002440E9 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
+		17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
+		17E4D56B0F41E212002440E9 /* RestfulObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestfulObject.h; path = Models/RestfulObject.h; sourceTree = "<group>"; };
+		17E4D56C0F41E212002440E9 /* RestfulObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestfulObject.m; path = Models/RestfulObject.m; sourceTree = "<group>"; };
+		17E4D5A60F41F628002440E9 /* AbstractRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractRequest.h; path = Webservice/AbstractRequest.h; sourceTree = "<group>"; };
+		17E4D5A70F41F628002440E9 /* AbstractRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractRequest.m; path = Webservice/AbstractRequest.m; sourceTree = "<group>"; };
+		17E4D5B70F41FC8A002440E9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
+		17E4D5B80F41FC8A002440E9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
+		17E4D5BA0F41FC97002440E9 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		17E4D5BB0F41FC97002440E9 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		17E4D5CC0F4201BC002440E9 /* LocationsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationsRequest.h; path = Webservice/LocationsRequest.h; sourceTree = "<group>"; };
+		17E4D5CD0F4201BC002440E9 /* LocationsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationsRequest.m; path = Webservice/LocationsRequest.m; sourceTree = "<group>"; };
+		17E4D5D10F420216002440E9 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		17E4D5D40F420250002440E9 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		17E4D5D50F420250002440E9 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		17E4D6420F421BF9002440E9 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Commons/Settings.h; sourceTree = "<group>"; };
+		17E4D6430F421BF9002440E9 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Commons/Settings.m; sourceTree = "<group>"; };
+		17E4D69F0F42255A002440E9 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
+		17E4D6A00F42255A002440E9 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* WatermetersAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatermetersAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatermetersAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* Watermeters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watermeters.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28A0AAE50D9B0CCF005BE974 /* Watermeters_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Watermeters_Prefix.pch; sourceTree = "<group>"; };
+		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* WatermetersAppDelegate.h */,
+				1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */,
+				17E4D51C0F41DB7E002440E9 /* LocationsViewController.h */,
+				17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */,
+				17E4D5D40F420250002440E9 /* SettingsViewController.h */,
+				17E4D5D50F420250002440E9 /* SettingsViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		17E4D5640F41E1C0002440E9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17E4D56B0F41E212002440E9 /* RestfulObject.h */,
+				17E4D56C0F41E212002440E9 /* RestfulObject.m */,
+				17E4D69F0F42255A002440E9 /* Location.h */,
+				17E4D6A00F42255A002440E9 /* Location.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		17E4D5A30F41F578002440E9 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				17E4D5D10F420216002440E9 /* SettingsView.xib */,
+				17E4D5B70F41FC8A002440E9 /* WebService.h */,
+				17E4D5B80F41FC8A002440E9 /* WebService.m */,
+				17E4D5A60F41F628002440E9 /* AbstractRequest.h */,
+				17E4D5A70F41F628002440E9 /* AbstractRequest.m */,
+				17E4D5CC0F4201BC002440E9 /* LocationsRequest.h */,
+				17E4D5CD0F4201BC002440E9 /* LocationsRequest.m */,
+			);
+			name = Webservice;
+			sourceTree = "<group>";
+		};
+		17E4D5A90F41F656002440E9 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				17E4D5BA0F41FC97002440E9 /* Stack.h */,
+				17E4D5BB0F41FC97002440E9 /* Stack.m */,
+				17E4D6420F421BF9002440E9 /* Settings.h */,
+				17E4D6430F421BF9002440E9 /* Settings.m */,
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* Watermeters.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				17E4D5A90F41F656002440E9 /* Commons */,
+				17E4D5A30F41F578002440E9 /* Webservice */,
+				17E4D5640F41E1C0002440E9 /* Models */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				28A0AAE50D9B0CCF005BE974 /* Watermeters_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				17E4D5190F41DADC002440E9 /* LocationsView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* Watermeters */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Watermeters" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Watermeters;
+			productName = Watermeters;
+			productReference = 1D6058910D05DD3D006BFB54 /* Watermeters.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Watermeters" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* Watermeters */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
+				17E4D51A0F41DADC002440E9 /* LocationsView.xib in Resources */,
+				17E4D5D20F420216002440E9 /* SettingsView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* WatermetersAppDelegate.m in Sources */,
+				17E4D51E0F41DB7E002440E9 /* LocationsViewController.m in Sources */,
+				17E4D56D0F41E212002440E9 /* RestfulObject.m in Sources */,
+				17E4D5A80F41F628002440E9 /* AbstractRequest.m in Sources */,
+				17E4D5B90F41FC8A002440E9 /* WebService.m in Sources */,
+				17E4D5BC0F41FC97002440E9 /* Stack.m in Sources */,
+				17E4D5CE0F4201BC002440E9 /* LocationsRequest.m in Sources */,
+				17E4D5D60F420250002440E9 /* SettingsViewController.m in Sources */,
+				17E4D6440F421BF9002440E9 /* Settings.m in Sources */,
+				17E4D6A10F42255A002440E9 /* Location.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Watermeters_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = Watermeters;
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Watermeters_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = Watermeters;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Watermeters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Watermeters" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
