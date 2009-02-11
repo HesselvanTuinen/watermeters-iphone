@@ -12,11 +12,11 @@
 		17B359C40F42FA6F00EE608C /* AbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359C30F42FA6F00EE608C /* AbstractObject.m */; };
 		17B359E30F42FB5800EE608C /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359E20F42FB5800EE608C /* Report.m */; };
 		17B35A330F4301EF00EE608C /* ReportsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B35A320F4301EF00EE608C /* ReportsRequest.m */; };
+		17B35A610F4304EE00EE608C /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B35A600F4304EE00EE608C /* WebService.m */; };
 		17E4D51A0F41DADC002440E9 /* LocationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E4D5190F41DADC002440E9 /* LocationsView.xib */; };
 		17E4D51E0F41DB7E002440E9 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */; };
 		17E4D56D0F41E212002440E9 /* RestfulObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D56C0F41E212002440E9 /* RestfulObject.m */; };
 		17E4D5A80F41F628002440E9 /* AbstractRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5A70F41F628002440E9 /* AbstractRequest.m */; };
-		17E4D5B90F41FC8A002440E9 /* WebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5B80F41FC8A002440E9 /* WebService.m */; };
 		17E4D5BC0F41FC97002440E9 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5BB0F41FC97002440E9 /* Stack.m */; };
 		17E4D5CE0F4201BC002440E9 /* LocationsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5CD0F4201BC002440E9 /* LocationsRequest.m */; };
 		17E4D5D20F420216002440E9 /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E4D5D10F420216002440E9 /* SettingsView.xib */; };
@@ -41,6 +41,8 @@
 		17B359E20F42FB5800EE608C /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Models/Report.m; sourceTree = "<group>"; };
 		17B35A310F4301EF00EE608C /* ReportsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsRequest.h; path = Webservice/ReportsRequest.h; sourceTree = "<group>"; };
 		17B35A320F4301EF00EE608C /* ReportsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsRequest.m; path = Webservice/ReportsRequest.m; sourceTree = "<group>"; };
+		17B35A5F0F4304EE00EE608C /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebService.h; path = Webservice/WebService.h; sourceTree = "<group>"; };
+		17B35A600F4304EE00EE608C /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebService.m; path = Webservice/WebService.m; sourceTree = "<group>"; };
 		17E4D5190F41DADC002440E9 /* LocationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationsView.xib; sourceTree = "<group>"; };
 		17E4D51C0F41DB7E002440E9 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
 		17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
@@ -48,8 +50,6 @@
 		17E4D56C0F41E212002440E9 /* RestfulObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestfulObject.m; path = Models/RestfulObject.m; sourceTree = "<group>"; };
 		17E4D5A60F41F628002440E9 /* AbstractRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractRequest.h; path = Webservice/AbstractRequest.h; sourceTree = "<group>"; };
 		17E4D5A70F41F628002440E9 /* AbstractRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractRequest.m; path = Webservice/AbstractRequest.m; sourceTree = "<group>"; };
-		17E4D5B70F41FC8A002440E9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
-		17E4D5B80F41FC8A002440E9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
 		17E4D5BA0F41FC97002440E9 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Commons/Stack.h; sourceTree = "<group>"; };
 		17E4D5BB0F41FC97002440E9 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Commons/Stack.m; sourceTree = "<group>"; };
 		17E4D5CC0F4201BC002440E9 /* LocationsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationsRequest.h; path = Webservice/LocationsRequest.h; sourceTree = "<group>"; };
@@ -120,10 +120,10 @@
 		17E4D5A30F41F578002440E9 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
+				17B35A5F0F4304EE00EE608C /* WebService.h */,
+				17B35A600F4304EE00EE608C /* WebService.m */,
 				17B35A310F4301EF00EE608C /* ReportsRequest.h */,
 				17B35A320F4301EF00EE608C /* ReportsRequest.m */,
-				17E4D5B70F41FC8A002440E9 /* WebService.h */,
-				17E4D5B80F41FC8A002440E9 /* WebService.m */,
 				17E4D5A60F41F628002440E9 /* AbstractRequest.h */,
 				17E4D5A70F41F628002440E9 /* AbstractRequest.m */,
 				17E4D5CC0F4201BC002440E9 /* LocationsRequest.h */,
@@ -265,7 +265,6 @@
 				17E4D51E0F41DB7E002440E9 /* LocationsViewController.m in Sources */,
 				17E4D56D0F41E212002440E9 /* RestfulObject.m in Sources */,
 				17E4D5A80F41F628002440E9 /* AbstractRequest.m in Sources */,
-				17E4D5B90F41FC8A002440E9 /* WebService.m in Sources */,
 				17E4D5BC0F41FC97002440E9 /* Stack.m in Sources */,
 				17E4D5CE0F4201BC002440E9 /* LocationsRequest.m in Sources */,
 				17E4D5D60F420250002440E9 /* SettingsViewController.m in Sources */,
@@ -275,6 +274,7 @@
 				17B359C40F42FA6F00EE608C /* AbstractObject.m in Sources */,
 				17B359E30F42FB5800EE608C /* Report.m in Sources */,
 				17B35A330F4301EF00EE608C /* ReportsRequest.m in Sources */,
+				17B35A610F4304EE00EE608C /* WebService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

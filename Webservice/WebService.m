@@ -1,16 +1,11 @@
 //
 //  WebService.m
-//  AppReview
+//  Watermeters
 //
-//  Created by Allerin on 08-11-13.
-//  Copyright 2008 Allerin. All rights reserved.
 //
 
 #import "WebService.h"
-#import "Model.h"
-#import "NSAuthException.h"
-#import "NetworkException.h"
-
+#import "Settings.h"
 
 static char b64[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
@@ -141,51 +136,32 @@ static int encodebase64(unsigned char *dst, const unsigned char *src, int length
 		data = [[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error] retain];
 		if (error == nil) {
 			finished = YES;
-		} else if (auth >= 1 && data == nil) {
+		} 
+		else if (auth >= 1 && data == nil) {
 			UIAlertView *nwAlert = [[UIAlertView alloc] initWithTitle:@"Network Unreachable" 
 															  message:@"To use AppReview you need to be connected to the Internet." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[nwAlert show];
 			[nwAlert release];
 			finished = YES;
-			// @throw [NetworkException exceptionWithName:@"Network exception" reason:@"Can't connect to the server" userInfo:nil];
 		} else {
 			[data autorelease];
 			
 			if (auth >= 5) {
-				// TODO: throw an exception that is handled by caller
 				UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:@"Unable to reach server" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 				[alert show];
 				[alert release];
 				return @"";
-			} else if (auth >= 1) { 
-				// create a password and set it on the server
-				NSString *deviceUDID = [[UIDevice currentDevice] uniqueIdentifier];
-				//NSLog(@"device id %@", deviceUDID);
-				NSMutableString *pass = [[NSMutableString alloc] init];
-				for(int i = 0; i < [deviceUDID length]; i++) {
-					if([deviceUDID characterAtIndex:i] == '-') {
-					} else if([deviceUDID characterAtIndex:i] == '0') {
-						[pass appendFormat:@"%c", 'a' + (random() % 26)];
-					} else {
-						[pass appendFormat:@"%c", [deviceUDID characterAtIndex:i]];
-					}
-				}
-				for(int i = 0; i < 4; i++)
-					[pass appendFormat:@"%c", 'a' + (random() % 26)];
-				NSString *purl = [NSString stringWithFormat:@"http://ws.appreview.com/user.xml?iphone[key]=%@", pass];
-				NSData *result = [WebService sendSyncPostRequest:purl];
-				
-				NSLog(@"creating new account: %@", purl);
-				setProfilePassword(pass);
-				[pass release];
+			} 
+			else if (auth >= 1) { 
+				@throw [NSException exceptionWithName:@"Webservice Authentication" reason:@"Authenticaiton faild!" userInfo:nil];
 			}
-			
+			else {
+				NSString *tmp = [NSString stringWithFormat:@"%@:%@", [Settings username], [Settings password]];
+				NSString *base64string = [WebService encodeBase64String:tmp];
+				[request addValue:[NSString stringWithFormat:@"Basic %@", base64string] forHTTPHeaderField:@"Authorization"];
+			}
+
 			auth++;
-			Profile *profile = getProfile();
-			NSString *tmp = [NSString stringWithFormat:@"%@:%@", @"iphone_hash", profile.password];
-			NSString *base64string = [WebService encodeBase64String:tmp];
-			[request addValue:[NSString stringWithFormat:@"Basic %@", base64string] forHTTPHeaderField:@"Authorization"];
-			[profile release];
 		}
 	} while (!finished);
 	
