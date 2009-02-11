@@ -29,10 +29,10 @@
 }
 
 - (NSArray *)doRequest {
-	return [self doRequestusingCache:YES];
+	return [self doRequestUsingCache:YES];
 }
 
-- (NSArray *)doRequestusingCache:(BOOL)useCache {
+- (NSArray *)doRequestUsingCache:(BOOL)useCache {
 	[self generateUrlString];
 
 	NSString *xml;
@@ -85,7 +85,7 @@
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
-	//NSLog(@"found file and started parsing");
+	xmlDict = [[NSMutableDictionary alloc] init];
 }
 
 - (void)parser:(NSXMLParser *)parse parseErrorOccurred:(NSError *)parseError {
@@ -101,18 +101,58 @@
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI 
  qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-	[elements_stack push:elementName];
-	[self initCurrent:attributeDict];
+	// Set the type of current xml element (if it's not set already)
+	XmlElement *currentXE = [self currentXmlElement];
+	if (currentXE && currentXE.type == XmlElementTypeUnkown) {
+		currentXE.type = XmlElementTypeDictionary;
+		currentXE.valueObject = [[NSMutableDictionary alloc] init];
+		[self updateDictionary];
+	}
+	
+	XmlElement *xe = [XmlElement elementWithName:elementName];
+	[elements_stack push:xe];
+
+	// Check if current element has the attribute: type="array"
+	NSString *value = [attributeDict objectForKey:@"type"];
+	if (value && [value isEqualToString:@"array"]) {
+		xe.type = XmlElementTypeArray;
+		xe.valueObject = [[NSMutableArray alloc] init];
+		[self updateDictionary];
+	}
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+	string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+	if ([string length] > 0) {
+		// Set the type of current xml element and its value (if it's not set already)
+		XmlElement *currentXE = [self currentXmlElement];
+		if (currentXE && currentXE.type == XmlElementTypeUnkown) {
+			currentXE.type = XmlElementTypeItem;
+			currentXE.valueObject = [[NSMutableString alloc] init];
+			[self updateDictionary];
+		}
+		
+		[(NSMutableString *)currentXE.valueObject appendString:string];
+	}
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI 
  qualifiedName:(NSString *)qName 
 {
-	[elements_stack pop];
+	XmlElement *xmlElement = [elements_stack pop];
+	NSLog(@"poped element with name = %@, type = %d", xmlElement.name, xmlElement.type);
+	if (xmlElement.type == XmlElementTypeItem) NSLog(@" - with value: %@", xmlElement.valueObject);
+	else if (xmlElement.type == XmlElementTypeArray) NSLog(@" - with count: %d", [(NSMutableArray *)xmlElement.valueObject count]);
+	else {
+		NSDictionary *dict = (NSMutableDictionary *)xmlElement.valueObject;
+		for (id key in dict) {
+			NSLog(@"key: %@, value: %@", key, [dict objectForKey:key]);
+		}
+	}
 }
 
-- (void)parserDidEndDocument:(NSXMLParser *)parser {    
-	// NSLog(@"all done!");
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
 	done = YES;
 }
 
@@ -137,14 +177,38 @@
 - (void)initCurrent {
 }
 
+- (void)updateDictionary {
+	XmlElement *currentXE = [self currentXmlElement];
+	XmlElement *enclosingXE = [self enclosingXmlElement];
+	
+	if (enclosingXE) {
+		if (enclosingXE.type == XmlElementTypeDictionary) {
+			[(NSMutableDictionary *)enclosingXE.valueObject setObject:currentXE.valueObject forKey:currentXE.name];
+		} else if (enclosingXE.type = XmlElementTypeArray) {
+			[(NSMutableArray *)enclosingXE.valueObject addObject:currentXE.valueObject];
+		}
+	}
+	else {
+		[xmlDict setObject:currentXE.valueObject forKey:currentXE.name];
+	}
+}
+
 // XML element that is currently parsed
-- (NSString *)currentXmlElement {
-	return [elements_stack top] ? (NSString *)[elements_stack top] : @"";
+- (XmlElement *)currentXmlElement {
+	return [elements_stack top] ? (XmlElement *)[elements_stack top] : nil;
+}
+
+- (NSString *)currentXmlElementName {
+	return [elements_stack top] ? ((XmlElement *)[elements_stack top]).name : @"";
 }
 
 // XML element that encloses currentXmlElement
-- (NSString *)enclosingXmlElement {
-	return [elements_stack belowTop] ? (NSString *)[elements_stack belowTop] : @"";
+- (XmlElement *)enclosingXmlElement {
+	return [elements_stack belowTop] ? (XmlElement *)[elements_stack belowTop] : nil;
+}
+
+- (NSString *)enclosingXmlElementName {
+	return [elements_stack belowTop] ? ((XmlElement *)[elements_stack belowTop]).name : @"";
 }
 
 @end

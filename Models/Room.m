@@ -12,9 +12,12 @@
 @implementation Room
 
 @synthesize label, locationId;
+@synthesize watermeters;
 
 - (void)dealloc {
 	[label release];
+	
+	[watermeters release];
 	
 	[super dealloc];
 }

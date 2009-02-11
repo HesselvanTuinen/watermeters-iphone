@@ -12,11 +12,14 @@
 @implementation Location
 
 @synthesize label, ownerName, address;
+@synthesize rooms;
 
 - (void)dealloc {
 	[label release];
 	[ownerName release];
 	[address release];
+	
+	[rooms release];
 	
 	[super dealloc];
 }

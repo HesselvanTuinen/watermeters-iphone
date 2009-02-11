@@ -8,14 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Stack.h"
+#import "XmlElement.h"
 
 
 @interface AbstractRequest : NSObject {
 	NSMutableString *urlString;
-	NSXMLParser *requestParser;
 	NSMutableArray *results;
-	Stack *elements_stack;
-	Boolean done;
 }
 
 @property (nonatomic, retain) NSMutableString *urlString;
@@ -25,12 +23,11 @@
 
 - (void)generateUrlString;
 - (NSArray *)doRequest;
-- (NSArray *)doRequestusingCache:(BOOL)useCache;
+- (NSArray *)doRequestUsingCache:(BOOL)useCache;
 - (NSArray *)parseXml:(NSString *)xml;
 - (void)initCurrent;
 - (void)initCurrent:(NSDictionary *)attributeDict;
 
-- (NSString *)currentXmlElement;
-- (NSString *)enclosingXmlElement; // element that encloses currentXmlElement
+
 
 @end

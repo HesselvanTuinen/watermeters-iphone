@@ -16,7 +16,7 @@
 	[self.urlString setString:@"http://localhost:3000/locations.xml"];
 }
 
-
+/*
 - (void)initCurrent {
 	if ([[self currentXmlElement] isEqualToString:@"location"]) {
 		pk = [[NSMutableString alloc] init];
@@ -28,6 +28,8 @@
 
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
+	[super parser:parser foundCharacters:string];
+	
 	string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
 	if ([[self enclosingXmlElement] isEqualToString:@"location"]) {
@@ -60,5 +62,6 @@
 	
 	[super parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName];
 }
+*/
 
 @end

@@ -13,9 +13,13 @@
 @interface Report : AbstractObject {
 	NSInteger locationId;
 	NSString *officialDate;
+	
+	NSArray *reads;
 }
 
 @property (nonatomic, assign) NSInteger locationId;
 @property (nonatomic, retain) NSString *officialDate;
+
+@property (nonatomic, retain) NSArray *reads;
 
 @end

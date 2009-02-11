@@ -12,5 +12,12 @@
 @implementation Report
 
 @synthesize locationId, officialDate;
+@synthesize reads;
+
+- (void)dealloc {
+	[reads release];
+	
+	[super dealloc];
+}
 
 @end

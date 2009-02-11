@@ -14,10 +14,14 @@
 	NSString *label;
 	NSString *ownerName;
 	NSString *address;
+	
+	NSArray *rooms;
 }
 
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, retain) NSString *ownerName;
 @property (nonatomic, retain) NSString *address;
+
+@property (nonatomic, retain) NSArray *rooms;
 
 @end

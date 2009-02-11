@@ -13,9 +13,13 @@
 @interface Room : AbstractObject {
 	NSString *label;
 	NSInteger locationId;
+	
+	NSArray *watermeters;
 }
 
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, assign) NSInteger locationId;
+
+@property (nonatomic, retain) NSArray *watermeters;
 
 @end
