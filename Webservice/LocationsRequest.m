@@ -19,6 +19,7 @@
 
 - (void)initCurrent {
 	if ([[self currentXmlElement] isEqualToString:@"location"]) {
+		pk = [[NSMutableString alloc] init];
 		label = [[NSMutableString alloc] init];
 		address = [[NSMutableString alloc] init];
 		owner_name = [[NSMutableString alloc] init];
@@ -30,7 +31,9 @@
 	string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	
 	if ([[self enclosingXmlElement] isEqualToString:@"location"]) {
-		if ([[self currentXmlElement] isEqualToString:@"address"]) {
+		if ([[self currentXmlElement] isEqualToString:@"id"]) {
+			[pk appendString:string];
+		} else if ([[self currentXmlElement] isEqualToString:@"address"]) {
 			[address appendString:string];
 		} else if ([[self currentXmlElement] isEqualToString:@"label"]) {
 			[label appendString:string];
@@ -45,6 +48,7 @@
 	if ([[self currentXmlElement] isEqualToString:@"location"]) {
 		// Create Location object
 		Location *location = [[Location alloc] init];
+		location.pk = [pk intValue];
 		location.label = label;
 		location.address = address;
 		location.ownerName = owner_name;

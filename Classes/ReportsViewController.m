@@ -1,22 +1,19 @@
 //
-//  LocationsViewController.m
+//  ReportsViewController.m
 //  Watermeters
 //
-//  Created by Radu Cojocaru on 10Feb//09.
+//  Created by Radu Cojocaru on 11Feb//09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "LocationsViewController.h"
-#import "SettingsViewController.h"
-#import "LocationsRequest.h"
-#import "Location.h"
 #import "ReportsViewController.h"
+#import "ReportsRequest.h"
 
 
-@implementation LocationsViewController
+@implementation ReportsViewController
 
-@synthesize locationsTableView;
-@synthesize locations;
+@synthesize reportsTableView, addressLabel, ownerLabel;
+@synthesize location, reports;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -37,18 +34,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	// View title
-	self.navigationItem.title = @"Locations";
+	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	self.navigationItem.title = self.location.label;
 	
-	// Setting buttons
-	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(onSettingsShow)];
-	self.navigationItem.rightBarButtonItem = barButtonItem;
-	[barButtonItem release];
+	self.addressLabel.text = self.location.address;
+	self.ownerLabel.text = self.location.ownerName;
 	
-	// Locations
-	LocationsRequest *locationsRequest = [[LocationsRequest alloc] init];
-	self.locations = [locationsRequest doRequest];
-	[locationsRequest release];
+	// Load reports
+	ReportsRequest *reportsRequest = [[ReportsRequest alloc] init];
+	reportsRequest.locationId = self.location.pk;
+	self.reports = [reportsRequest doRequest];
+	[reportsRequest release];
 }
 
 
@@ -65,7 +61,6 @@
     // Release anything that's not essential, such as cached data
 }
 
-
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -75,14 +70,14 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [locations count];
+    return [reports count];
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *CellIdentifier = @"LocationCell";
+    static NSString *CellIdentifier = @"ReportCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
@@ -90,36 +85,26 @@
     }
     
     // Set up the cell
-	Location *location = (Location *)[self.locations objectAtIndex:indexPath.row];
-	cell.text = location.label;
+	Report *report = (Report *)[self.reports objectAtIndex:indexPath.row];
+	cell.text = report.officialDate;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
     return cell;
 }
 
-// Show reports for selected location
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	ReportsViewController *rvc = [[ReportsViewController alloc] initWithNibName:@"ReportsView" bundle:nil];
-	Location *location = (Location *)[self.locations objectAtIndex:indexPath.row];
-	rvc.location = location;
-	[self.navigationController pushViewController:rvc animated:YES];
-	[rvc release];
 }
 
 
 - (void)dealloc {
-	[locationsTableView release];
-	
-	[locations release];
-	
+	[reportsTableView release];
+	[addressLabel release];
+	[ownerLabel release];
+
+	[location release];
+	[reports release];
+
     [super dealloc];
-}
-
-
-- (void)onSettingsShow {
-	SettingsViewController *svc = [[SettingsViewController alloc] initWithNibName:@"SettingsView" bundle:nil];
-	[self presentModalViewController:svc animated:YES];
-	[svc release];
 }
 
 

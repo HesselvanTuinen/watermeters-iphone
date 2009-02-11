@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AbstractObject.h"
 
 
-@interface Location : NSObject {
+@interface Location : AbstractObject {
 	NSString *label;
 	NSString *ownerName;
 	NSString *address;

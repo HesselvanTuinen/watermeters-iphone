@@ -11,7 +11,7 @@
 
 
 @interface LocationsRequest : AbstractRequest {
-	NSMutableString *label, *address, *owner_name;
+	NSMutableString *pk, *label, *address, *owner_name;
 }
 
 @end

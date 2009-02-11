@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17B359750F42EF7500EE608C /* ReportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B359740F42EF7500EE608C /* ReportsView.xib */; };
+		17B359780F42EF8400EE608C /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359770F42EF8400EE608C /* ReportsViewController.m */; };
+		17B359C40F42FA6F00EE608C /* AbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359C30F42FA6F00EE608C /* AbstractObject.m */; };
+		17B359E30F42FB5800EE608C /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359E20F42FB5800EE608C /* Report.m */; };
+		17B35A330F4301EF00EE608C /* ReportsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B35A320F4301EF00EE608C /* ReportsRequest.m */; };
 		17E4D51A0F41DADC002440E9 /* LocationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17E4D5190F41DADC002440E9 /* LocationsView.xib */; };
 		17E4D51E0F41DB7E002440E9 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */; };
 		17E4D56D0F41E212002440E9 /* RestfulObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D56C0F41E212002440E9 /* RestfulObject.m */; };
@@ -27,6 +32,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17B359740F42EF7500EE608C /* ReportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsView.xib; sourceTree = "<group>"; };
+		17B359760F42EF8400EE608C /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
+		17B359770F42EF8400EE608C /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
+		17B359C20F42FA6F00EE608C /* AbstractObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractObject.h; path = Models/AbstractObject.h; sourceTree = "<group>"; };
+		17B359C30F42FA6F00EE608C /* AbstractObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractObject.m; path = Models/AbstractObject.m; sourceTree = "<group>"; };
+		17B359E10F42FB5800EE608C /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Report.h; path = Models/Report.h; sourceTree = "<group>"; };
+		17B359E20F42FB5800EE608C /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Report.m; path = Models/Report.m; sourceTree = "<group>"; };
+		17B35A310F4301EF00EE608C /* ReportsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReportsRequest.h; path = Webservice/ReportsRequest.h; sourceTree = "<group>"; };
+		17B35A320F4301EF00EE608C /* ReportsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReportsRequest.m; path = Webservice/ReportsRequest.m; sourceTree = "<group>"; };
 		17E4D5190F41DADC002440E9 /* LocationsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationsView.xib; sourceTree = "<group>"; };
 		17E4D51C0F41DB7E002440E9 /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
 		17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
@@ -82,6 +96,8 @@
 				17E4D51D0F41DB7E002440E9 /* LocationsViewController.m */,
 				17E4D5D40F420250002440E9 /* SettingsViewController.h */,
 				17E4D5D50F420250002440E9 /* SettingsViewController.m */,
+				17B359760F42EF8400EE608C /* ReportsViewController.h */,
+				17B359770F42EF8400EE608C /* ReportsViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -93,6 +109,10 @@
 				17E4D56C0F41E212002440E9 /* RestfulObject.m */,
 				17E4D69F0F42255A002440E9 /* Location.h */,
 				17E4D6A00F42255A002440E9 /* Location.m */,
+				17B359C20F42FA6F00EE608C /* AbstractObject.h */,
+				17B359C30F42FA6F00EE608C /* AbstractObject.m */,
+				17B359E10F42FB5800EE608C /* Report.h */,
+				17B359E20F42FB5800EE608C /* Report.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -100,7 +120,8 @@
 		17E4D5A30F41F578002440E9 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
-				17E4D5D10F420216002440E9 /* SettingsView.xib */,
+				17B35A310F4301EF00EE608C /* ReportsRequest.h */,
+				17B35A320F4301EF00EE608C /* ReportsRequest.m */,
 				17E4D5B70F41FC8A002440E9 /* WebService.h */,
 				17E4D5B80F41FC8A002440E9 /* WebService.m */,
 				17E4D5A60F41F628002440E9 /* AbstractRequest.h */,
@@ -157,9 +178,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17E4D5D10F420216002440E9 /* SettingsView.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
-				8D1107310486CEB800E47090 /* Info.plist */,
 				17E4D5190F41DADC002440E9 /* LocationsView.xib */,
+				17B359740F42EF7500EE608C /* ReportsView.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -226,6 +249,7 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				17E4D51A0F41DADC002440E9 /* LocationsView.xib in Resources */,
 				17E4D5D20F420216002440E9 /* SettingsView.xib in Resources */,
+				17B359750F42EF7500EE608C /* ReportsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +271,10 @@
 				17E4D5D60F420250002440E9 /* SettingsViewController.m in Sources */,
 				17E4D6440F421BF9002440E9 /* Settings.m in Sources */,
 				17E4D6A10F42255A002440E9 /* Location.m in Sources */,
+				17B359780F42EF8400EE608C /* ReportsViewController.m in Sources */,
+				17B359C40F42FA6F00EE608C /* AbstractObject.m in Sources */,
+				17B359E30F42FB5800EE608C /* Report.m in Sources */,
+				17B35A330F4301EF00EE608C /* ReportsRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
