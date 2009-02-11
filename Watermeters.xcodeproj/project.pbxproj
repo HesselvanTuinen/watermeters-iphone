@@ -50,8 +50,8 @@
 		17E4D5A70F41F628002440E9 /* AbstractRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractRequest.m; path = Webservice/AbstractRequest.m; sourceTree = "<group>"; };
 		17E4D5B70F41FC8A002440E9 /* WebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebService.h; sourceTree = "<group>"; };
 		17E4D5B80F41FC8A002440E9 /* WebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebService.m; sourceTree = "<group>"; };
-		17E4D5BA0F41FC97002440E9 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
-		17E4D5BB0F41FC97002440E9 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
+		17E4D5BA0F41FC97002440E9 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Stack.h; path = Commons/Stack.h; sourceTree = "<group>"; };
+		17E4D5BB0F41FC97002440E9 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Stack.m; path = Commons/Stack.m; sourceTree = "<group>"; };
 		17E4D5CC0F4201BC002440E9 /* LocationsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationsRequest.h; path = Webservice/LocationsRequest.h; sourceTree = "<group>"; };
 		17E4D5CD0F4201BC002440E9 /* LocationsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationsRequest.m; path = Webservice/LocationsRequest.m; sourceTree = "<group>"; };
 		17E4D5D10F420216002440E9 /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
