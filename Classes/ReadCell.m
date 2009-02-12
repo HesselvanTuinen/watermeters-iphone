@@ -64,7 +64,7 @@
 - (void)setRead:(Read *)newRead {
 	if (read) [read release];
 	read = [newRead retain];
-	self.value_text_field.text = read.value != 0 ? [NSString stringWithFormat:@"%f", read.value] : @"";
+	self.value_text_field.text = read.value != 0 ? [NSString stringWithFormat:@"%.3f", read.value] : @"";
 }
 
 @end

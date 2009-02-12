@@ -30,14 +30,14 @@
 	
 	NSDictionary *reportDict = [dictionary objectForKey:@"report"];
 	Report *report = [Report reportFromDictionary:reportDict];
-	
+
 	NSArray *reads = [reportDict objectForKey:@"reads"];
 	NSDictionary *readDict;
 	for (readDict in reads) {
 		Read *read = [Read readFromDictionary:readDict];
 		[report addRead:read];
 	}
-	
+
 	[results addObject:report];
 	[report release];
 	

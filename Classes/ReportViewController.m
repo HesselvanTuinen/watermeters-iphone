@@ -29,14 +29,13 @@
 	self.report = [[newReportRequest doRequest] objectAtIndex:0];
 	[newReportRequest release];
 	
-	// self.navigationItem.title = self.report.officialDate;
-	
 	// Report request with reads
 	ShowReportRequest *showReportRequest = [[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId];
 	Report *reportWithReads = [[[showReportRequest doRequest] objectAtIndex:0] retain];
 	[showReportRequest release];
+	
+	self.navigationItem.title = reportWithReads.officialDate;
 
-	/*
 	// Replace reads in self.report with the reads from reportWithReads
 	Room *room;
 	Watermeter *watermeter;
@@ -45,7 +44,6 @@
 			watermeter.read = [self readForWatermeter:watermeter.pk report:self.reportId inReads:reportWithReads.reads];
 		}
 	}
-	*/
 	[reportWithReads release];
 }
 
@@ -67,21 +65,18 @@
 #pragma mark UITableView datasource methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	//return [self.report.location.rooms count];
-	return 1;
+	return [self.report.location.rooms count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	//Room *room = [self.report.location.rooms objectAtIndex:section];
-	//return room.label;
-	return @"";
+	Room *room = [self.report.location.rooms objectAtIndex:section];
+	return room.label;
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	//Room *room = [self.report.location.rooms objectAtIndex:section];
-    //return [room.watermeters count];
-	return 0;
+	Room *room = [self.report.location.rooms objectAtIndex:section];
+    return [room.watermeters count];
 }
 
 

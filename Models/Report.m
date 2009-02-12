@@ -25,7 +25,6 @@
 	NSMutableArray *newReads = [NSMutableArray arrayWithArray:self.reads];
 	[newReads addObject:newRead];
 	self.reads = newReads;
-	[newReads release];
 }
 
 + (Report *)reportFromDictionary:(NSDictionary *)dictionary {
