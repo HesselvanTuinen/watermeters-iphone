@@ -7,6 +7,7 @@
 //
 
 #import "NewReportRequest.h"
+#import "Report.h"
 
 
 @implementation NewReportRequest
@@ -15,6 +16,15 @@
 
 - (void)generateUrlString {
 	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports/new.xml", self.locationId]];
+}
+
+- (NSArray *)parseDictionary:(NSDictionary *)dictionary {
+	NSMutableArray *results = [[NSMutableArray alloc] init];
+	
+	NSDictionary *reportDict = [dictionary objectForKey:@"report"];
+	//Report *report = [[Report alloc] init];
+	
+	return results;
 }
 
 @end

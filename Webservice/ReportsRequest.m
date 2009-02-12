@@ -18,45 +18,22 @@
 	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports.xml", self.locationId]];
 }
 
-/*
-- (void)initCurrent {
-	if ([[self currentXmlElement] isEqualToString:@"report"]) {
-		pk = [[NSMutableString alloc] init];
-		location_id = [[NSMutableString alloc] init];
-		official_date = [[NSMutableString alloc] init];
-	}
-}
-
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-	string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+- (NSArray *)parseDictionary:(NSDictionary *)dictionary {
+	NSMutableArray *results = [[NSMutableArray alloc] init];
 	
-	if ([[self enclosingXmlElement] isEqualToString:@"report"]) {
-		if ([[self currentXmlElement] isEqualToString:@"id"]) {
-			[pk appendString:string];
-		} else if ([[self currentXmlElement] isEqualToString:@"location-id"]) {
-			[location_id appendString:string];
-		} else if ([[self currentXmlElement] isEqualToString:@"official-date"]) {
-			[official_date appendString:string];
-		}
-	}
-}
-
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	if ([[self currentXmlElement] isEqualToString:@"report"]) {
-		// Create Report object
+	NSArray *reports = [dictionary objectForKey:@"reports"];
+	NSDictionary *reportDict;
+	for (reportDict in reports) {
 		Report *report = [[Report alloc] init];
-		report.pk = [pk intValue];
-		report.locationId = [location_id intValue];
-		report.officialDate = official_date;
+		report.pk = [(NSString *)[reportDict objectForKey:@"id"] intValue];
+		report.locationId = [(NSString *)[reportDict objectForKey:@"location-id"] intValue];
+		report.officialDate = [reportDict objectForKey:@"official-date"];
 		
-		// Store Report object into results array
 		[results addObject:report];
 		[report release];
 	}
 	
-	[super parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName];
+	return results;
 }
-*/
+
 @end
