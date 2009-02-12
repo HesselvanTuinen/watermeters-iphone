@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AbstractObject.h"
+#import "Watermeter.h"
 
 
 @interface Room : AbstractObject {
@@ -21,5 +22,9 @@
 @property (nonatomic, assign) NSInteger locationId;
 
 @property (nonatomic, retain) NSArray *watermeters;
+
+- (void)addWatermeter:(Watermeter *)watermeter;
+
++ (Room *)roomFromDictionary:(NSDictionary *)dictionary;
 
 @end

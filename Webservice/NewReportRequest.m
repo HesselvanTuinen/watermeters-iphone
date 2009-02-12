@@ -26,8 +26,21 @@
 	Report *report = [[Report alloc] init];
 	report.locationId = [(NSString *)[dictionary objectForKey:@"location-id"] intValue];
 	
-	//NSDictionary *locationDict = [reportDict objectForKey:@"location"];
-	//Location *location = [Location locationFromDictionary:locationDict];
+	NSDictionary *locationDict = [reportDict objectForKey:@"location"];
+	Location *location = [Location locationFromDictionary:locationDict];
+	report.location = location;
+	
+	NSArray *rooms = [locationDict objectForKey:@"rooms"];
+	NSDictionary *roomDict;
+	for (roomDict in rooms) {
+		Room *room = [Room roomFromDictionary:roomDict];
+		NSArray *watermeters = [roomDict objectForKey:@"watermeters"];
+		NSDictionary *watermeterDict;
+		for (watermeterDict in watermeters) {
+			[room addWatermeter:[Watermeter watermeterFromDictionary:watermeterDict]];
+		}
+		[report.location addRoom:room];
+	}
 	
 	[results addObject:report];
 	[report release];

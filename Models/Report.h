@@ -26,4 +26,6 @@
 @property (nonatomic, retain) NSArray *reads;
 @property (nonatomic, retain) Location *location;
 
++ (Report *)reportFromDictionary:(NSDictionary *)dictionary;
+
 @end

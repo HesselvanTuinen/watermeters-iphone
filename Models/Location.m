@@ -24,6 +24,12 @@
 	[super dealloc];
 }
 
+- (void)addRoom:(Room *)room {
+	NSMutableArray *newRooms = [NSMutableArray arrayWithArray:self.rooms];
+	[newRooms addObject:room];
+	self.rooms = newRooms;
+}
+
 + (Location *)locationFromDictionary:(NSDictionary *)dictionary {
 	Location *location = [[Location alloc] init];
 	location.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];

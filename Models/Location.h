@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AbstractObject.h"
+#import "Room.h"
 
 
 @interface Location : AbstractObject {
@@ -23,6 +24,8 @@
 @property (nonatomic, retain) NSString *address;
 
 @property (nonatomic, retain) NSArray *rooms;
+
+- (void)addRoom:(Room *)room;
 
 + (Location *)locationFromDictionary:(NSDictionary *)dictionary;
 

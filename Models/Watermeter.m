@@ -19,4 +19,12 @@
 	[super dealloc];
 }
 
++ (Watermeter *)watermeterFromDictionary:(NSDictionary *)dictionary {
+	Watermeter *watermeter = [[Watermeter alloc] init];
+	watermeter.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];
+	watermeter.label = [dictionary objectForKey:@"label"];
+	watermeter.roomId = [(NSString *)[dictionary objectForKey:@"room-id"] intValue];
+	return [watermeter autorelease];
+}
+
 @end

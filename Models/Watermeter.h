@@ -18,4 +18,6 @@
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, assign) NSInteger roomId;
 
++ (Watermeter *)watermeterFromDictionary:(NSDictionary *)dictionary;
+
 @end

@@ -21,4 +21,12 @@
 	[super dealloc];
 }
 
++ (Report *)reportFromDictionary:(NSDictionary *)dictionary {
+	Report *report = [[Report alloc] init];
+	report.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];
+	report.officialDate = [dictionary objectForKey:@"official-date"];
+	report.locationId = [(NSString *)[dictionary objectForKey:@"location-id"] intValue];
+	return [report autorelease];
+}
+
 @end

@@ -22,4 +22,18 @@
 	[super dealloc];
 }
 
+- (void)addWatermeter:(Watermeter *)watermeter {
+	NSMutableArray *newWatermeters = [NSMutableArray arrayWithArray:self.watermeters];
+	[newWatermeters addObject:watermeter];
+	self.watermeters = newWatermeters;
+}
+
++ (Room *)roomFromDictionary:(NSDictionary *)dictionary {
+	Room *room = [[Room alloc] init];
+	room.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];
+	room.locationId = [(NSString *)[dictionary objectForKey:@"location-id"] intValue];
+	room.label = [dictionary objectForKey:@"label"];
+	return [room autorelease];
+}
+
 @end
