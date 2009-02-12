@@ -21,6 +21,13 @@
 	[super dealloc];
 }
 
+- (void)addRead:(Read *)newRead {
+	NSMutableArray *newReads = [NSMutableArray arrayWithArray:self.reads];
+	[newReads addObject:newRead];
+	self.reads = newReads;
+	[newReads release];
+}
+
 + (Report *)reportFromDictionary:(NSDictionary *)dictionary {
 	Report *report = [[Report alloc] init];
 	report.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];

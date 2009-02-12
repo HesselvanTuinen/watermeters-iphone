@@ -26,6 +26,8 @@
 @property (nonatomic, retain) NSArray *reads;
 @property (nonatomic, retain) Location *location;
 
+- (void)addRead:(Read *)newRead;
+
 + (Report *)reportFromDictionary:(NSDictionary *)dictionary;
 
 @end

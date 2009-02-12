@@ -21,5 +21,6 @@
 @property (nonatomic, assign) CGFloat value;
 
 + (Read *)readWithValue:(CGFloat)value watermerId:(NSInteger)watermerId;
++ (Read *)readFromDictionary:(NSDictionary *)dictionary;
 
 @end

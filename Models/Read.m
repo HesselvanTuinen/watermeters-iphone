@@ -20,4 +20,12 @@
 	return [read autorelease];
 }
 
++ (Read *)readFromDictionary:(NSDictionary *)dictionary {
+	Read *read = [[Read alloc] init];
+	read.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];
+	read.reportId = [(NSString *)[dictionary objectForKey:@"report-id"] intValue];
+	read.watermerId = [(NSString *)[dictionary objectForKey:@"watermeter-id"] intValue];
+	read.value = [(NSString *)[dictionary objectForKey:@"watermeter-id"] floatValue];
+}
+
 @end

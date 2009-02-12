@@ -55,9 +55,11 @@
 	self.watermeter_label.text = text;
 }
 
+
 - (void)setEditFocus {
 	[self.value_text_field becomeFirstResponder];
 }
+
 
 - (void)setRead:(Read *)newRead {
 	if (read) [read release];

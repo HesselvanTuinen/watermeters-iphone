@@ -16,6 +16,7 @@
 		178C77AB0F4466DA007780D3 /* ReadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C77AA0F4466DA007780D3 /* ReadCell.m */; };
 		178C77AF0F446962007780D3 /* NewReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178C77AE0F446962007780D3 /* NewReportView.xib */; };
 		178C77B50F446A4E007780D3 /* NewReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C77B40F446A4E007780D3 /* NewReportViewController.m */; };
+		178C78E70F44B5B0007780D3 /* ShowReportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C78E60F44B5B0007780D3 /* ShowReportRequest.m */; };
 		17B359750F42EF7500EE608C /* ReportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B359740F42EF7500EE608C /* ReportsView.xib */; };
 		17B359780F42EF8400EE608C /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359770F42EF8400EE608C /* ReportsViewController.m */; };
 		17B359C40F42FA6F00EE608C /* AbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359C30F42FA6F00EE608C /* AbstractObject.m */; };
@@ -60,6 +61,8 @@
 		178C77AE0F446962007780D3 /* NewReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewReportView.xib; sourceTree = "<group>"; };
 		178C77B30F446A4E007780D3 /* NewReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportViewController.h; sourceTree = "<group>"; };
 		178C77B40F446A4E007780D3 /* NewReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportViewController.m; sourceTree = "<group>"; };
+		178C78E50F44B5B0007780D3 /* ShowReportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowReportRequest.h; sourceTree = "<group>"; };
+		178C78E60F44B5B0007780D3 /* ShowReportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowReportRequest.m; sourceTree = "<group>"; };
 		17B359740F42EF7500EE608C /* ReportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsView.xib; sourceTree = "<group>"; };
 		17B359760F42EF8400EE608C /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
 		17B359770F42EF8400EE608C /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				17E4D5CD0F4201BC002440E9 /* LocationsRequest.m */,
 				174BC0180F43177D00C00C53 /* NewReportRequest.h */,
 				174BC0190F43177D00C00C53 /* NewReportRequest.m */,
+				178C78E50F44B5B0007780D3 /* ShowReportRequest.h */,
+				178C78E60F44B5B0007780D3 /* ShowReportRequest.m */,
 			);
 			name = Webservice;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				17CA08060F44519600477C40 /* ReportViewController.m in Sources */,
 				178C77AB0F4466DA007780D3 /* ReadCell.m in Sources */,
 				178C77B50F446A4E007780D3 /* NewReportViewController.m in Sources */,
+				178C78E70F44B5B0007780D3 /* ShowReportRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
