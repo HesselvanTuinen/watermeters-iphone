@@ -11,12 +11,12 @@
 
 @implementation ReadCell
 
-@synthesize watermeter_label, value_text_field;
+@synthesize watermeter_label, value_text_field, read;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
 		// Label
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 10, 200, 30)];
+		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 200, 30)];
 		label.font = [UIFont systemFontOfSize:16.0];
 		self.watermeter_label = label;
 		[self addSubview:watermeter_label];
@@ -45,6 +45,7 @@
 - (void)dealloc {
 	[watermeter_label release];
 	[value_text_field release];
+	if (read) [read release];
 
     [super dealloc];
 }
@@ -56,6 +57,12 @@
 
 - (void)setEditFocus {
 	[self.value_text_field becomeFirstResponder];
+}
+
+- (void)setRead:(Read *)newRead {
+	if (read) [read release];
+	read = [newRead retain];
+	self.value_text_field.text = read.value != 0 ? [NSString stringWithFormat:@"%f", read.value] : @"";
 }
 
 @end

@@ -65,8 +65,7 @@
 	Room *room = [self.report.location.rooms objectAtIndex:indexPath.section];
 	Watermeter *watermeter = [room.watermeters objectAtIndex:indexPath.row];
 	[cell setLabel:watermeter.label];
-	
-	// TODO: set the value in the cell textfield
+	[cell setRead:watermeter.read];
 	
 	if (indexPath.section == 0 && indexPath.row == 0) {
 		[cell setEditFocus];

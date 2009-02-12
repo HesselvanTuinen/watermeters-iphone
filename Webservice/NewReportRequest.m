@@ -9,6 +9,7 @@
 #import "NewReportRequest.h"
 #import "Report.h"
 #import "Location.h"
+#import "Read.h"
 
 
 @implementation NewReportRequest
@@ -37,7 +38,9 @@
 		NSArray *watermeters = [roomDict objectForKey:@"watermeters"];
 		NSDictionary *watermeterDict;
 		for (watermeterDict in watermeters) {
-			[room addWatermeter:[Watermeter watermeterFromDictionary:watermeterDict]];
+			Watermeter *watermeter = [Watermeter watermeterFromDictionary:watermeterDict];
+			watermeter.read = [Read readWithValue:0 watermerId:watermeter.pk];
+			[room addWatermeter:watermeter];
 		}
 		[report.location addRoom:room];
 	}

@@ -13,11 +13,13 @@
 @interface Read : AbstractObject {
 	NSInteger reportId;
 	NSInteger watermerId;
-	NSDecimal value;
+	CGFloat value;
 }
 
 @property (nonatomic, assign) NSInteger reportId;
 @property (nonatomic, assign) NSInteger watermerId;
-@property (nonatomic, assign) NSDecimal value;
+@property (nonatomic, assign) CGFloat value;
+
++ (Read *)readWithValue:(CGFloat)value watermerId:(NSInteger)watermerId;
 
 @end

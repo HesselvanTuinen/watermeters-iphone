@@ -12,9 +12,12 @@
 @implementation Watermeter
 
 @synthesize label, roomId;
+@synthesize read;
 
 - (void)dealloc {
 	[label release];
+	
+	[read release];
 	
 	[super dealloc];
 }

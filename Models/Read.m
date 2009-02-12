@@ -13,4 +13,11 @@
 
 @synthesize reportId, watermerId, value;
 
++ (Read *)readWithValue:(CGFloat)value watermerId:(NSInteger)watermerId {
+	Read *read = [[Read alloc] init];
+	read.value = value;
+	read.watermerId = watermerId;
+	return [read autorelease];
+}
+
 @end
