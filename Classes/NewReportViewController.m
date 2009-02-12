@@ -66,6 +66,12 @@
 	Watermeter *watermeter = [room.watermeters objectAtIndex:indexPath.row];
 	[cell setLabel:watermeter.label];
 	
+	// TODO: set the value in the cell textfield
+	
+	if (indexPath.section == 0 && indexPath.row == 0) {
+		[cell setEditFocus];
+	}
+	
     return cell;
 }
 

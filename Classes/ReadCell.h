@@ -18,5 +18,6 @@
 @property (nonatomic, retain) UITextField *value_text_field;
 
 - (void)setLabel:(NSString *)text;
+- (void)setEditFocus;
 
 @end

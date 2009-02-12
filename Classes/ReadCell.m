@@ -26,6 +26,8 @@
 		UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(210, 8, 80, 30)];
 		textField.font = [UIFont systemFontOfSize:16.0];
 		textField.borderStyle = UITextBorderStyleRoundedRect;
+		textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+		textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
 		self.value_text_field = textField;
 		[self addSubview:value_text_field];
 		[textField release];
@@ -35,9 +37,7 @@
 
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-
-    [super setSelected:selected animated:animated];
-
+    //[super setSelected:selected animated:animated];
     // Configure the view for the selected state
 }
 
@@ -54,5 +54,8 @@
 	self.watermeter_label.text = text;
 }
 
+- (void)setEditFocus {
+	[self.value_text_field becomeFirstResponder];
+}
 
 @end
