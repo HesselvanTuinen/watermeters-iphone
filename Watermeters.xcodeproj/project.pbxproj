@@ -13,6 +13,9 @@
 		174BC01A0F43177D00C00C53 /* NewReportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BC0190F43177D00C00C53 /* NewReportRequest.m */; };
 		174BC0BC0F432FA200C00C53 /* XmlElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BC0BB0F432FA200C00C53 /* XmlElement.m */; };
 		174BC1BB0F43513000C00C53 /* XmlParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 174BC1BA0F43513000C00C53 /* XmlParser.m */; };
+		178C77AB0F4466DA007780D3 /* ReadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C77AA0F4466DA007780D3 /* ReadCell.m */; };
+		178C77AF0F446962007780D3 /* NewReportView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 178C77AE0F446962007780D3 /* NewReportView.xib */; };
+		178C77B50F446A4E007780D3 /* NewReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178C77B40F446A4E007780D3 /* NewReportViewController.m */; };
 		17B359750F42EF7500EE608C /* ReportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B359740F42EF7500EE608C /* ReportsView.xib */; };
 		17B359780F42EF8400EE608C /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359770F42EF8400EE608C /* ReportsViewController.m */; };
 		17B359C40F42FA6F00EE608C /* AbstractObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B359C30F42FA6F00EE608C /* AbstractObject.m */; };
@@ -52,6 +55,11 @@
 		174BC0BB0F432FA200C00C53 /* XmlElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlElement.m; path = Commons/XmlElement.m; sourceTree = "<group>"; };
 		174BC1B90F43513000C00C53 /* XmlParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XmlParser.h; path = Commons/XmlParser.h; sourceTree = "<group>"; };
 		174BC1BA0F43513000C00C53 /* XmlParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XmlParser.m; path = Commons/XmlParser.m; sourceTree = "<group>"; };
+		178C77A90F4466DA007780D3 /* ReadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadCell.h; sourceTree = "<group>"; };
+		178C77AA0F4466DA007780D3 /* ReadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadCell.m; sourceTree = "<group>"; };
+		178C77AE0F446962007780D3 /* NewReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewReportView.xib; sourceTree = "<group>"; };
+		178C77B30F446A4E007780D3 /* NewReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportViewController.h; sourceTree = "<group>"; };
+		178C77B40F446A4E007780D3 /* NewReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportViewController.m; sourceTree = "<group>"; };
 		17B359740F42EF7500EE608C /* ReportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsView.xib; sourceTree = "<group>"; };
 		17B359760F42EF8400EE608C /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
 		17B359770F42EF8400EE608C /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
@@ -123,6 +131,10 @@
 				17B359770F42EF8400EE608C /* ReportsViewController.m */,
 				17CA08040F44519600477C40 /* ReportViewController.h */,
 				17CA08050F44519600477C40 /* ReportViewController.m */,
+				178C77A90F4466DA007780D3 /* ReadCell.h */,
+				178C77AA0F4466DA007780D3 /* ReadCell.m */,
+				178C77B30F446A4E007780D3 /* NewReportViewController.h */,
+				178C77B40F446A4E007780D3 /* NewReportViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -220,6 +232,7 @@
 				17E4D5190F41DADC002440E9 /* LocationsView.xib */,
 				17B359740F42EF7500EE608C /* ReportsView.xib */,
 				17CA07F90F44512D00477C40 /* ReportView.xib */,
+				178C77AE0F446962007780D3 /* NewReportView.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
 			name = Resources;
@@ -289,6 +302,7 @@
 				17E4D5D20F420216002440E9 /* SettingsView.xib in Resources */,
 				17B359750F42EF7500EE608C /* ReportsView.xib in Resources */,
 				17CA07FA0F44512D00477C40 /* ReportView.xib in Resources */,
+				178C77AF0F446962007780D3 /* NewReportView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +335,8 @@
 				174BC0BC0F432FA200C00C53 /* XmlElement.m in Sources */,
 				174BC1BB0F43513000C00C53 /* XmlParser.m in Sources */,
 				17CA08060F44519600477C40 /* ReportViewController.m in Sources */,
+				178C77AB0F4466DA007780D3 /* ReadCell.m in Sources */,
+				178C77B50F446A4E007780D3 /* NewReportViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

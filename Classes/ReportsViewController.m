@@ -9,6 +9,7 @@
 #import "ReportsViewController.h"
 #import "ReportsRequest.h"
 #import "ReportViewController.h"
+#import "NewReportViewController.h"
 
 
 @implementation ReportsViewController
@@ -107,9 +108,9 @@
 }
 
 - (void)onNewReport {
-	ReportViewController *rvc = [[ReportViewController alloc] initWithNibName:@"ReportView" bundle:nil];
-	[self presentModalViewController:rvc animated:YES];
-	[rvc release];
+	NewReportViewController *nrvc = [[NewReportViewController alloc] initWithNibName:@"NewReportView" bundle:nil];
+	[self presentModalViewController:nrvc animated:YES];
+	[nrvc release];
 }
 
 
