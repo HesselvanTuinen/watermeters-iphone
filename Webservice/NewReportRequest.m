@@ -8,6 +8,7 @@
 
 #import "NewReportRequest.h"
 #import "Report.h"
+#import "Location.h"
 
 
 @implementation NewReportRequest
@@ -22,7 +23,14 @@
 	NSMutableArray *results = [[NSMutableArray alloc] init];
 	
 	NSDictionary *reportDict = [dictionary objectForKey:@"report"];
-	//Report *report = [[Report alloc] init];
+	Report *report = [[Report alloc] init];
+	report.locationId = [(NSString *)[dictionary objectForKey:@"location-id"] intValue];
+	
+	//NSDictionary *locationDict = [reportDict objectForKey:@"location"];
+	//Location *location = [Location locationFromDictionary:locationDict];
+	
+	[results addObject:report];
+	[report release];
 	
 	return results;
 }

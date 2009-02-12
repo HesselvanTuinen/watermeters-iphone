@@ -24,4 +24,13 @@
 	[super dealloc];
 }
 
++ (Location *)locationFromDictionary:(NSDictionary *)dictionary {
+	Location *location = [[Location alloc] init];
+	location.pk = [(NSString *)[dictionary objectForKey:@"id"] intValue];
+	location.label = [dictionary objectForKey:@"label"];
+	location.address = [dictionary objectForKey:@"address"];
+	location.ownerName = [dictionary objectForKey:@"owner-name"];
+	return [location autorelease];
+}
+
 @end

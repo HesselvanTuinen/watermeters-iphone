@@ -24,4 +24,6 @@
 
 @property (nonatomic, retain) NSArray *rooms;
 
++ (Location *)locationFromDictionary:(NSDictionary *)dictionary;
+
 @end

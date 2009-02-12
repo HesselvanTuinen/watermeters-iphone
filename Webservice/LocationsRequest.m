@@ -22,14 +22,8 @@
 	NSArray *locations = [dictionary objectForKey:@"locations"];
 	NSDictionary *locationDict;
 	for (locationDict in locations) {
-		Location *location = [[Location alloc] init];
-		location.pk = [(NSString *)[locationDict objectForKey:@"id"] intValue];
-		location.label = [locationDict objectForKey:@"label"];
-		location.address = [locationDict objectForKey:@"address"];
-		location.ownerName = [locationDict objectForKey:@"owner-name"];
-		
+		Location *location = [Location locationFromDictionary:locationDict];
 		[results addObject:location];
-		[location release];
 	}
 	
 	return results;
