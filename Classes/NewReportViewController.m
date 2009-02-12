@@ -7,47 +7,67 @@
 //
 
 #import "NewReportViewController.h"
+#import "NewReportRequest.h"
+#import "ReadCell.h"
 
 
 @implementation NewReportViewController
 
-@synthesize readsTableView;
-
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
+@synthesize readsTableView, report, locationId;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+	
+	// Report request
+	NewReportRequest *newReportRequest = [[NewReportRequest alloc] init];
+	newReportRequest.locationId = self.locationId;
+	self.report = [[newReportRequest doRequest] objectAtIndex:0];
+	[newReportRequest release];
 }
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
     // Release anything that's not essential, such as cached data
 }
 
+#pragma mark -
+#pragma mark UITableView datasource methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.report.location.rooms count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	Room *room = [self.report.location.rooms objectAtIndex:section];
+	return room.label;
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	Room *room = [self.report.location.rooms objectAtIndex:section];
+    return [room.watermeters count];
+}
+
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"ReadCell";
+    
+    ReadCell *cell = (ReadCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[ReadCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+    }
+    
+    // Set up the cell
+	Room *room = [self.report.location.rooms objectAtIndex:indexPath.section];
+	Watermeter *watermeter = [room.watermeters objectAtIndex:indexPath.row];
+	[cell setLabel:watermeter.label];
+	
+    return cell;
+}
 
 #pragma mark -
 #pragma mark IBActions methods
@@ -63,6 +83,7 @@
 
 - (void)dealloc {
 	[readsTableView release];
+	[report release];
 	
     [super dealloc];
 }

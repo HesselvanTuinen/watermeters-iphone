@@ -103,6 +103,13 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI 
  qualifiedName:(NSString *)qName 
 {
+	XmlElement *currentXE = [self currentXmlElement];
+	if (currentXE && currentXE.type == XmlElementTypeUnkown) {
+		currentXE.type = XmlElementTypeItem;
+		currentXE.valueObject = @"";
+		[self updateDictionary];
+	}
+	
 	[elements_stack pop];
 }
 

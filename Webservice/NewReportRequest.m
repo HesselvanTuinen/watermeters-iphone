@@ -24,7 +24,7 @@
 	
 	NSDictionary *reportDict = [dictionary objectForKey:@"report"];
 	Report *report = [[Report alloc] init];
-	report.locationId = [(NSString *)[dictionary objectForKey:@"location-id"] intValue];
+	report.locationId = [(NSString *)[reportDict objectForKey:@"location-id"] intValue];
 	
 	NSDictionary *locationDict = [reportDict objectForKey:@"location"];
 	Location *location = [Location locationFromDictionary:locationDict];

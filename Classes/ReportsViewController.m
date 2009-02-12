@@ -109,6 +109,7 @@
 
 - (void)onNewReport {
 	NewReportViewController *nrvc = [[NewReportViewController alloc] initWithNibName:@"NewReportView" bundle:nil];
+	nrvc.locationId = self.location.pk;
 	[self presentModalViewController:nrvc animated:YES];
 	[nrvc release];
 }

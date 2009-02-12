@@ -10,9 +10,13 @@
 
 
 @interface ReadCell : UITableViewCell {
-	UITextField *valueTextField;
+	UILabel *watermeter_label;
+	UITextField *value_text_field;
 }
 
-@property (nonatomic, retain) UITextField *valueTextField;
+@property (nonatomic, retain) UILabel *watermeter_label;
+@property (nonatomic, retain) UITextField *value_text_field;
+
+- (void)setLabel:(NSString *)text;
 
 @end
