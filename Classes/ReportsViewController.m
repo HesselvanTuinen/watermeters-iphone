@@ -8,6 +8,7 @@
 
 #import "ReportsViewController.h"
 #import "ReportsRequest.h"
+#import "ReportViewController.h"
 
 
 @implementation ReportsViewController
@@ -45,6 +46,11 @@
 	reportsRequest.locationId = self.location.pk;
 	self.reports = [reportsRequest doRequest];
 	[reportsRequest release];
+	
+	// 'New Report' button
+	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New Report" style:UIBarButtonItemStyleBordered target:self action:@selector(onNewReport)];
+	self.navigationItem.rightBarButtonItem = barButtonItem;
+	[barButtonItem release];
 }
 
 
@@ -93,6 +99,17 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	Report *report = (Report *)[self.reports objectAtIndex:indexPath.row];
+	ReportViewController *rvc = [[ReportViewController alloc] initWithNibName:@"ReportView" bundle:nil];
+	rvc.reportId = report.pk;
+	[self.navigationController pushViewController:rvc animated:YES];
+	[rvc release];
+}
+
+- (void)onNewReport {
+	ReportViewController *rvc = [[ReportViewController alloc] initWithNibName:@"ReportView" bundle:nil];
+	[self presentModalViewController:rvc animated:YES];
+	[rvc release];
 }
 
 
