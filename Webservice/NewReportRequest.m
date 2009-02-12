@@ -16,6 +16,13 @@
 
 @synthesize locationId;
 
+- (id)initWithLocation:(NSInteger)location_id {
+	if (self = [super init]) {
+		self.locationId = location_id;
+	}
+	return self;
+}
+
 - (void)generateUrlString {
 	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports/new.xml", self.locationId]];
 }

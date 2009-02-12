@@ -21,8 +21,7 @@
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
 	// Report request
-	NewReportRequest *newReportRequest = [[NewReportRequest alloc] init];
-	newReportRequest.locationId = self.locationId;
+	NewReportRequest *newReportRequest = [[NewReportRequest alloc] initWithLocation:self.locationId];
 	self.report = [[newReportRequest doRequest] objectAtIndex:0];
 	[newReportRequest release];
 }

@@ -7,12 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Report.h"
 
 
-@interface ReportViewController : UIViewController {
+@interface ReportViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+	IBOutlet UITableView *readsTableView;
+	
 	NSInteger reportId;
+	NSInteger locationId;
+	Report *report;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *readsTableView;
+
 @property (nonatomic, assign) NSInteger reportId;
+@property (nonatomic, assign) NSInteger locationId;
+@property (nonatomic, retain) Report *report;
 
 @end

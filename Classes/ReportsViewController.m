@@ -103,6 +103,7 @@
 	Report *report = (Report *)[self.reports objectAtIndex:indexPath.row];
 	ReportViewController *rvc = [[ReportViewController alloc] initWithNibName:@"ReportView" bundle:nil];
 	rvc.reportId = report.pk;
+	rvc.locationId = report.locationId;
 	[self.navigationController pushViewController:rvc animated:YES];
 	[rvc release];
 }

@@ -7,34 +7,47 @@
 //
 
 #import "ReportViewController.h"
+#import "ReadCell.h"
+#import "NewReportRequest.h"
+#import "ShowReportRequest.h"
+
+@interface ReportViewController (Private)
+- (Read *)readForWatermeter:(NSInteger)watermeter_id report:(NSInteger)report_id inReads:(NSArray *)reads;
+@end
 
 
 @implementation ReportViewController
 
-@synthesize reportId;
+@synthesize readsTableView;
+@synthesize reportId, locationId, report;
 
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	// Report request
+	NewReportRequest *newReportRequest = [[NewReportRequest alloc] initWithLocation:self.locationId];
+	self.report = [[newReportRequest doRequest] objectAtIndex:0];
+	[newReportRequest release];
+	
+	// self.navigationItem.title = self.report.officialDate;
+	
+	// Report request with reads
+	ShowReportRequest *showReportRequest = [[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId];
+	Report *reportWithReads = [[[showReportRequest doRequest] objectAtIndex:0] retain];
+	[showReportRequest release];
+
+	/*
+	// Replace reads in self.report with the reads from reportWithReads
+	Room *room;
+	Watermeter *watermeter;
+	for (room in self.report.location.rooms) {
+		for (watermeter in room.watermeters) {
+			watermeter.read = [self readForWatermeter:watermeter.pk report:self.reportId inReads:reportWithReads.reads];
+		}
+	}
+	*/
+	[reportWithReads release];
 }
-*/
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -50,7 +63,65 @@
 }
 
 
+#pragma mark -
+#pragma mark UITableView datasource methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	//return [self.report.location.rooms count];
+	return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	//Room *room = [self.report.location.rooms objectAtIndex:section];
+	//return room.label;
+	return @"";
+}
+
+// Customize the number of rows in the table view.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	//Room *room = [self.report.location.rooms objectAtIndex:section];
+    //return [room.watermeters count];
+	return 0;
+}
+
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"ReadCell";
+    
+    ReadCell *cell = (ReadCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[ReadCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+    }
+
+    // Set up the cell
+	Room *room = [self.report.location.rooms objectAtIndex:indexPath.section];
+	Watermeter *watermeter = [room.watermeters objectAtIndex:indexPath.row];
+	[cell setLabel:watermeter.label];
+	[cell setRead:watermeter.read];
+
+    return cell;
+}
+
+
+#pragma mark -
+#pragma mark Private methods
+
+- (Read *)readForWatermeter:(NSInteger)watermeter_id report:(NSInteger)report_id inReads:(NSArray *)reads {
+	for (Read *read in reads) {
+		if (read.watermerId == watermeter_id && read.reportId == report_id) {
+			return read;
+		}
+	}
+	return nil;
+}
+
+
 - (void)dealloc {
+	[readsTableView release];
+	[report release];
+
     [super dealloc];
 }
 
