@@ -12,12 +12,15 @@
 
 
 @interface XmlParser : NSObject {
-	NSXMLParser *parser;
-	Stack *elements_stack;
+	NSXMLParser *xml_parser;
 	NSMutableDictionary *xml_dict;
+
+	Stack *elements_stack;
 	BOOL done;
 }
 
+- (NSDictionary *)parseXml:(NSString *)xml;
 
++ (NSDictionary *)parseXml:(NSString *)xml;
 
 @end

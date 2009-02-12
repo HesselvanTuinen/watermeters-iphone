@@ -16,52 +16,23 @@
 	[self.urlString setString:@"http://localhost:3000/locations.xml"];
 }
 
-/*
-- (void)initCurrent {
-	if ([[self currentXmlElement] isEqualToString:@"location"]) {
-		pk = [[NSMutableString alloc] init];
-		label = [[NSMutableString alloc] init];
-		address = [[NSMutableString alloc] init];
-		owner_name = [[NSMutableString alloc] init];
-	}
-}
-
-
-- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-	[super parser:parser foundCharacters:string];
+- (NSArray *)parseDictionary:(NSDictionary *)dictionary {
+	NSMutableArray *results = [[NSMutableArray alloc] init];
 	
-	string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	
-	if ([[self enclosingXmlElement] isEqualToString:@"location"]) {
-		if ([[self currentXmlElement] isEqualToString:@"id"]) {
-			[pk appendString:string];
-		} else if ([[self currentXmlElement] isEqualToString:@"address"]) {
-			[address appendString:string];
-		} else if ([[self currentXmlElement] isEqualToString:@"label"]) {
-			[label appendString:string];
-		} else if ([[self currentXmlElement] isEqualToString:@"owner-name"]) {
-			[owner_name appendString:string];
-		}
-	}
-}
-
-
-- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-	if ([[self currentXmlElement] isEqualToString:@"location"]) {
-		// Create Location object
+	NSArray *locations = [dictionary objectForKey:@"locations"];
+	NSDictionary *locationDict;
+	for (locationDict in locations) {
 		Location *location = [[Location alloc] init];
-		location.pk = [pk intValue];
-		location.label = label;
-		location.address = address;
-		location.ownerName = owner_name;
+		location.pk = [(NSString *)[locationDict objectForKey:@"id"] intValue];
+		location.label = [locationDict objectForKey:@"label"];
+		location.address = [locationDict objectForKey:@"address"];
+		location.ownerName = [locationDict objectForKey:@"owner-name"];
 		
-		// Store Location object into results array
 		[results addObject:location];
 		[location release];
 	}
 	
-	[super parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName];
+	return results;
 }
-*/
 
 @end

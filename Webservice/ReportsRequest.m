@@ -18,7 +18,7 @@
 	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports.xml", self.locationId]];
 }
 
-
+/*
 - (void)initCurrent {
 	if ([[self currentXmlElement] isEqualToString:@"report"]) {
 		pk = [[NSMutableString alloc] init];
@@ -58,5 +58,5 @@
 	
 	[super parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName];
 }
-
+*/
 @end
