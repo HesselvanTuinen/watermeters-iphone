@@ -64,8 +64,8 @@
 		178C77AE0F446962007780D3 /* NewReportView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewReportView.xib; sourceTree = "<group>"; };
 		178C77B30F446A4E007780D3 /* NewReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewReportViewController.h; sourceTree = "<group>"; };
 		178C77B40F446A4E007780D3 /* NewReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewReportViewController.m; sourceTree = "<group>"; };
-		178C78E50F44B5B0007780D3 /* ShowReportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowReportRequest.h; sourceTree = "<group>"; };
-		178C78E60F44B5B0007780D3 /* ShowReportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowReportRequest.m; sourceTree = "<group>"; };
+		178C78E50F44B5B0007780D3 /* ShowReportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShowReportRequest.h; path = Webservice/ShowReportRequest.h; sourceTree = "<group>"; };
+		178C78E60F44B5B0007780D3 /* ShowReportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShowReportRequest.m; path = Webservice/ShowReportRequest.m; sourceTree = "<group>"; };
 		17B359740F42EF7500EE608C /* ReportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsView.xib; sourceTree = "<group>"; };
 		17B359760F42EF8400EE608C /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
 		17B359770F42EF8400EE608C /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
