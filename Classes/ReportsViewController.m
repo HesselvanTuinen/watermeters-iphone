@@ -38,7 +38,6 @@
 	
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	self.navigationItem.title = @"Reports";
-	self.navigationItem.prompt = self.location.label;
 	
 	self.addressLabel.text = self.location.address;
 	self.ownerLabel.text = self.location.ownerName;

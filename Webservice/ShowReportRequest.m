@@ -23,7 +23,7 @@
 }
 
 - (void)generateUrlString {
-	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports/%d.xml", self.locationId, self.reportId]];
+	[self.urlString setString:[NSString stringWithFormat:@"%@/locations/%d/reports/%d.xml", WEBSERVICE_HOSTNAME, self.locationId, self.reportId]];
 }
 
 - (NSArray *)parseDictionary:(NSDictionary *)dictionary {

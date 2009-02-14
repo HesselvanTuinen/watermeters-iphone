@@ -28,7 +28,7 @@
 }
 
 - (void)generateUrlString {
-	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports.xml?", self.locationId]];
+	[self.urlString setString:[NSString stringWithFormat:@"%@/locations/%d/reports.xml?", WEBSERVICE_HOSTNAME, self.locationId]];
 	for (Read *read in self.reads) {
 		[self.urlString appendString:[NSString stringWithFormat:@"value_for_watermeter[%d]=%.3f&", read.watermerId, read.value]];
 	}

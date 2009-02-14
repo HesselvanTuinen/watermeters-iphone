@@ -18,6 +18,6 @@
 
 @property (nonatomic, assign) NSInteger locationId;
 
-- (id)initWithLocation:(NSInteger)location_id;
+- (id)initWithLocation:(NSInteger)new_location_id;
 
 @end

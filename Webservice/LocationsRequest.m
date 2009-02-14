@@ -13,7 +13,7 @@
 @implementation LocationsRequest
 
 - (void)generateUrlString {
-	[self.urlString setString:@"http://localhost:3000/locations.xml"];
+	[self.urlString setString:[NSString stringWithFormat:@"%@/locations.xml", WEBSERVICE_HOSTNAME]];
 }
 
 - (NSArray *)parseDictionary:(NSDictionary *)dictionary {

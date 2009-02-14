@@ -14,15 +14,15 @@
 
 @synthesize locationId;
 
-- (id)initWithLocation:(NSInteger)location_id {
+- (id)initWithLocation:(NSInteger)new_location_id {
 	if (self = [super init]) {
-		self.locationId = location_id;
+		self.locationId = new_location_id;
 	}
-	return self;
+	return self; 
 }
 
 - (void)generateUrlString {
-	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports.xml", self.locationId]];
+	[self.urlString setString:[NSString stringWithFormat:@"%@/locations/%d/reports.xml", WEBSERVICE_HOSTNAME, self.locationId]];
 }
 
 - (NSArray *)parseDictionary:(NSDictionary *)dictionary {

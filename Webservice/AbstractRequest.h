@@ -6,6 +6,10 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
+//#define WEBSERVICE_HOSTNAME @"http://localhost:3000"
+#define WEBSERVICE_HOSTNAME @"http://anunturirecente.ro"
+
+
 #import <Foundation/Foundation.h>
 
 
