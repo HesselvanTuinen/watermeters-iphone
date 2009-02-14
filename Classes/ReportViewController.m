@@ -54,6 +54,11 @@
 	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onSave:)];
 	self.navigationItem.rightBarButtonItem = barButtonItem;
 	[barButtonItem release];
+	
+	// Resize tableview (decrease height)
+	//CGRect newFrame = [readsTableView frame];
+	//newFrame.size.height -= 210;
+	//[readsTableView setFrame:newFrame];
 }
 
 /*

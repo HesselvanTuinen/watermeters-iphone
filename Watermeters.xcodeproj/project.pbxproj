@@ -37,6 +37,7 @@
 		17E4D6A10F42255A002440E9 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6A00F42255A002440E9 /* Location.m */; };
 		17F9BFF40F45D19900EA969C /* UpdateReportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F9BFF30F45D19900EA969C /* UpdateReportRequest.m */; };
 		17F9C0D20F46969000EA969C /* CreateReportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F9C0D10F46969000EA969C /* CreateReportRequest.m */; };
+		17F9C1990F46BDA600EA969C /* watermeter_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 17F9C1980F46BDA600EA969C /* watermeter_iphone.png */; };
 		1D3623260D0F684500981E51 /* WatermetersAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -101,6 +102,7 @@
 		17F9BFF30F45D19900EA969C /* UpdateReportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateReportRequest.m; path = Webservice/UpdateReportRequest.m; sourceTree = "<group>"; };
 		17F9C0D00F46969000EA969C /* CreateReportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateReportRequest.h; path = Webservice/CreateReportRequest.h; sourceTree = "<group>"; };
 		17F9C0D10F46969000EA969C /* CreateReportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateReportRequest.m; path = Webservice/CreateReportRequest.m; sourceTree = "<group>"; };
+		17F9C1980F46BDA600EA969C /* watermeter_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = watermeter_iphone.png; path = Images/watermeter_iphone.png; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* WatermetersAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatermetersAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatermetersAppDelegate.m; sourceTree = "<group>"; };
@@ -207,6 +209,14 @@
 			name = Commons;
 			sourceTree = "<group>";
 		};
+		17F9C1970F46BD9700EA969C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				17F9C1980F46BDA600EA969C /* watermeter_iphone.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +252,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				17F9C1970F46BD9700EA969C /* Images */,
 				17E4D5D10F420216002440E9 /* SettingsView.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				17E4D5190F41DADC002440E9 /* LocationsView.xib */,
@@ -318,6 +329,7 @@
 				17B359750F42EF7500EE608C /* ReportsView.xib in Resources */,
 				17CA07FA0F44512D00477C40 /* ReportView.xib in Resources */,
 				178C77AF0F446962007780D3 /* NewReportView.xib in Resources */,
+				17F9C1990F46BDA600EA969C /* watermeter_iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
