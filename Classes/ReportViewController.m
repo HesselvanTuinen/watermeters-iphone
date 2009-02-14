@@ -131,9 +131,7 @@
 	[updateReportRequest release];
 	
 	// Clear report cache
-	ShowReportRequest *showReportRequest = [[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId];
-	[showReportRequest clearCache];
-	[showReportRequest release];
+	[[[[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId] autorelease] clearCache];
 }
 
 

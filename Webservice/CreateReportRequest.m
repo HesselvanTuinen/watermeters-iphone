@@ -8,6 +8,7 @@
 
 #import "CreateReportRequest.h"
 #import "Read.h"
+#import "Report.h"
 
 
 @implementation CreateReportRequest
@@ -31,11 +32,18 @@
 	for (Read *read in self.reads) {
 		[self.urlString appendString:[NSString stringWithFormat:@"value_for_watermeter[%d]=%.3f&", read.watermerId, read.value]];
 	}
-	NSLog(@"url = %@", self.urlString);
 }
 
 - (NSArray *)parseDictionary:(NSDictionary *)dictionary {
-	return [NSArray array];
+	NSMutableArray *results = [[NSMutableArray alloc] init];
+	
+	NSDictionary *reportDict = [dictionary objectForKey:@"report"];
+	Report *report = [Report reportFromDictionary:reportDict];
+	
+	[results addObject:report];
+	[report release];
+	
+	return results;
 }
 
 - (void)dealloc {

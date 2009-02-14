@@ -22,11 +22,6 @@
 	return self;
 }
 
-- (void)clearCache { 
-	[self generateUrlString];
-	[RestfulObject removeCacheForURL:self.urlString];
-}
-
 - (void)generateUrlString {
 	[self.urlString setString:[NSString stringWithFormat:@"http://localhost:3000/locations/%d/reports/%d.xml", self.locationId, self.reportId]];
 }

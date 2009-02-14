@@ -10,6 +10,8 @@
 #import "NewReportRequest.h"
 #import "ReadCell.h"
 #import "CreateReportRequest.h"
+#import "Report.h"
+#import "ReportsRequest.h"
 
 
 @implementation NewReportViewController
@@ -92,8 +94,24 @@
 	
 	// Create report
 	CreateReportRequest *createReportRequest = [[CreateReportRequest alloc] initWithLocation:self.locationId reads:reads];
-	[createReportRequest doRequest];
+	NSArray *results = [[createReportRequest doRequest] retain];
 	[createReportRequest release];
+	
+	// Check if report was created successfully
+	if ([results count] > 0 && ((Report *)[results objectAtIndex:0]).pk > 0) {
+		// Clear reports list cache
+		[[[[ReportsRequest alloc] initWithLocation:self.locationId] autorelease] clearCache];
+		
+		// Dismiss view
+		[self.parentViewController dismissModalViewControllerAnimated:YES];
+	}
+	else {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Create Report" message:@"Error saving the new report" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alertView show];
+		[alertView release];
+	}
+	
+	[results release];
 }
 
 

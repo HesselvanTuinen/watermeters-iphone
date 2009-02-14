@@ -42,16 +42,21 @@
 	self.addressLabel.text = self.location.address;
 	self.ownerLabel.text = self.location.ownerName;
 	
-	// Load reports
-	ReportsRequest *reportsRequest = [[ReportsRequest alloc] init];
-	reportsRequest.locationId = self.location.pk;
-	self.reports = [reportsRequest doRequest];
-	[reportsRequest release];
-	
 	// 'New Report' button
 	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New Report" style:UIBarButtonItemStyleBordered target:self action:@selector(onNewReport)];
 	self.navigationItem.rightBarButtonItem = barButtonItem;
 	[barButtonItem release];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	// Load reports
+	ReportsRequest *reportsRequest = [[ReportsRequest alloc] initWithLocation:self.location.pk];
+	self.reports = [reportsRequest doRequest];
+	[reportsRequest release];
+	[self.reportsTableView reloadData];
 }
 
 

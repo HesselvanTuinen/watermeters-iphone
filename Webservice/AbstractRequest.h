@@ -21,5 +21,6 @@
 // Methods that should be implemented
 - (void)generateUrlString;
 - (NSArray *)parseDictionary:(NSDictionary *)dictionary;
+- (void)clearCache;
 
 @end

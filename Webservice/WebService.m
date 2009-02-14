@@ -126,6 +126,8 @@ static int encodebase64(unsigned char *dst, const unsigned char *src, int length
 	NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url]
 														 cachePolicy:NSURLCacheStorageNotAllowed timeoutInterval:60.0];
 	[request setHTTPMethod:self.method];
+	[request addValue:@"text/xml" forHTTPHeaderField:@"Content-Type"];
+	
 	NSURLResponse *response;
 	NSError *error;
 	NSData *data;
@@ -143,7 +145,8 @@ static int encodebase64(unsigned char *dst, const unsigned char *src, int length
 			[nwAlert show];
 			[nwAlert release];
 			finished = YES;
-		} else {
+		} 
+		else {
 			[data autorelease];
 			
 			if (auth >= 5) {

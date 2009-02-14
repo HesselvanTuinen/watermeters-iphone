@@ -7,9 +7,9 @@
 //
 
 #import "AbstractRequest.h"
-#import "RestfulObject.h"
 #import "WebService.h"
 #import "XmlParser.h"
+#import "RestfulObject.h"
 
 @implementation AbstractRequest
 
@@ -68,6 +68,11 @@
 
 - (NSArray *)parseDictionary:(NSDictionary *)dictionary {
 	return [NSArray array];
+}
+
+- (void)clearCache {
+	[self generateUrlString];
+	[RestfulObject removeCacheForURL:self.urlString];
 }
 
 @end
