@@ -125,9 +125,15 @@
 #pragma mark IBActions methods
 
 - (IBAction)onSave:(id)sender {
+	// Save report changes
 	UpdateReportRequest *updateReportRequest = [[UpdateReportRequest alloc] initWithLocation:self.locationId report:self.reportId reads:self.reads];
 	[updateReportRequest doRequest];
 	[updateReportRequest release];
+	
+	// Clear report cache
+	ShowReportRequest *showReportRequest = [[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId];
+	[showReportRequest clearCache];
+	[showReportRequest release];
 }
 
 

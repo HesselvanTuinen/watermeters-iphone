@@ -74,7 +74,6 @@
 
 - (void)onValueChanged:(id)sender {
 	self.read.value = [value_text_field.text floatValue];
-	NSLog(@"onValueChanged to %.3f", read.value);
 }
 
 @end

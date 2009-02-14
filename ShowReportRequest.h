@@ -19,5 +19,6 @@
 @property (nonatomic, assign) NSInteger locationId;
 
 - (id)initWithReport:(NSInteger)report_id location:(NSInteger)location_id;
+- (void)clearCache;
 
 @end

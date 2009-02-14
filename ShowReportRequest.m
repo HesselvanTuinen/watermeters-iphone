@@ -8,6 +8,7 @@
 
 #import "ShowReportRequest.h"
 #import "Report.h"
+#import "RestfulObject.h"
 
 @implementation ShowReportRequest
 
@@ -19,6 +20,11 @@
 		self.locationId = location_id;
 	}
 	return self;
+}
+
+- (void)clearCache { 
+	[self generateUrlString];
+	[RestfulObject removeCacheForURL:self.urlString];
 }
 
 - (void)generateUrlString {

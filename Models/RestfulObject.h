@@ -19,5 +19,6 @@
 + (NSString *)getContentForURL:(NSString *)url;
 + (void)clearCache;
 + (void)removeAllWithPattern:(NSString *)p;
++ (void)removeCacheForURL:(NSString *)url;
 
 @end

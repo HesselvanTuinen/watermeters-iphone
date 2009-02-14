@@ -70,4 +70,10 @@
 	}
 }
 
+
++ (void)removeCacheForURL:(NSString *)url {
+	NSString *filepath = [RestfulObject cacheFilenameForURL:url];
+	[[NSFileManager defaultManager] removeItemAtPath:filepath error:NULL];
+}
+
 @end
