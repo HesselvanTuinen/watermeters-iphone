@@ -44,11 +44,23 @@
 	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStyleBordered target:self action:@selector(onSettingsShow)];
 	self.navigationItem.rightBarButtonItem = barButtonItem;
 	[barButtonItem release];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	
 	// Locations
-	LocationsRequest *locationsRequest = [[LocationsRequest alloc] init];
-	self.locations = [locationsRequest doRequest];
-	[locationsRequest release];
+	@try {
+		LocationsRequest *locationsRequest = [[LocationsRequest alloc] init];
+		self.locations = [locationsRequest doRequest];
+		[locationsRequest release];
+		[self.locationsTableView reloadData];
+	}
+	@catch (NSException * e) {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Authentication failed" message:@"Open Settings to fill in your username and password." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		[alertView show];
+		[alertView release];
+	}
 }
 
 
