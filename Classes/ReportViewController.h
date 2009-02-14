@@ -16,6 +16,7 @@
 	NSInteger reportId;
 	NSInteger locationId;
 	Report *report;
+	NSArray *reads;
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *readsTableView;
@@ -23,5 +24,8 @@
 @property (nonatomic, assign) NSInteger reportId;
 @property (nonatomic, assign) NSInteger locationId;
 @property (nonatomic, retain) Report *report;
+@property (nonatomic, retain) NSArray *reads;
+
+- (IBAction)onSave:(id)sender;
 
 @end

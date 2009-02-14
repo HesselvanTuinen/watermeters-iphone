@@ -23,14 +23,14 @@
 }
 
 - (NSArray *)doRequest {
-	return [self doRequestUsingCache:YES];
+	return [self doRequestUsingCache:YES requestMethod:@"GET"];
 }
 
-- (NSArray *)doRequestUsingCache:(BOOL)useCache {
+- (NSArray *)doRequestUsingCache:(BOOL)useCache requestMethod:(NSString *)requestMethod {
 	[self generateUrlString];
 
-	NSString *xml;
-	NSArray *results;
+	NSString *xml = nil;
+	NSArray *results = [NSArray array];
 
 	// Get XML from cache
 	if (useCache) { 
@@ -39,7 +39,7 @@
 	
 	// Use webservice
 	if (!xml) {
-		NSData *data = [[WebService sendSyncRequest:self.urlString] retain];
+		NSData *data = [[WebService sendSyncRequest:self.urlString Method:requestMethod] retain];
 		if (data && [data length] > 0) {
 			xml = [NSString stringWithCString:[data bytes] length:[data length]];
 			[RestfulObject cacheContent:xml forURL:self.urlString]; // Cache it

@@ -31,6 +31,8 @@
 		self.value_text_field = textField;
 		[self addSubview:value_text_field];
 		[textField release];
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onValueChanged:) name:UITextFieldTextDidChangeNotification object:value_text_field];
     }
     return self;
 }
@@ -65,6 +67,14 @@
 	if (read) [read release];
 	read = [newRead retain];
 	self.value_text_field.text = read.value != 0 ? [NSString stringWithFormat:@"%.3f", read.value] : @"";
+}
+
+#pragma mark -
+#pragma mark UITextField notifications handling
+
+- (void)onValueChanged:(id)sender {
+	self.read.value = [value_text_field.text floatValue];
+	NSLog(@"onValueChanged to %.3f", read.value);
 }
 
 @end

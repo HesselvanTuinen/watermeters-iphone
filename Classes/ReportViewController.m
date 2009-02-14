@@ -10,16 +10,18 @@
 #import "ReadCell.h"
 #import "NewReportRequest.h"
 #import "ShowReportRequest.h"
+#import "UpdateReportRequest.h"
+
 
 @interface ReportViewController (Private)
-- (Read *)readForWatermeter:(NSInteger)watermeter_id report:(NSInteger)report_id inReads:(NSArray *)reads;
+- (Read *)readForWatermeter:(NSInteger)watermeter_id report:(NSInteger)report_id;
 @end
 
 
 @implementation ReportViewController
 
 @synthesize readsTableView;
-@synthesize reportId, locationId, report;
+@synthesize reportId, locationId, report, reads;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,19 +34,26 @@
 	// Report request with reads
 	ShowReportRequest *showReportRequest = [[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId];
 	Report *reportWithReads = [[[showReportRequest doRequest] objectAtIndex:0] retain];
-	[showReportRequest release];
 	
+	self.reads = reportWithReads.reads;
 	self.navigationItem.title = reportWithReads.officialDate;
+	
+	[showReportRequest release];
+	[reportWithReads release];
 
 	// Replace reads in self.report with the reads from reportWithReads
 	Room *room;
 	Watermeter *watermeter;
 	for (room in self.report.location.rooms) {
 		for (watermeter in room.watermeters) {
-			watermeter.read = [self readForWatermeter:watermeter.pk report:self.reportId inReads:reportWithReads.reads];
+			watermeter.read = [self readForWatermeter:watermeter.pk report:self.reportId];
 		}
 	}
-	[reportWithReads release];
+	
+	// Save button
+	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(onSave:)];
+	self.navigationItem.rightBarButtonItem = barButtonItem;
+	[barButtonItem release];
 }
 
 /*
@@ -103,8 +112,8 @@
 #pragma mark -
 #pragma mark Private methods
 
-- (Read *)readForWatermeter:(NSInteger)watermeter_id report:(NSInteger)report_id inReads:(NSArray *)reads {
-	for (Read *read in reads) {
+- (Read *)readForWatermeter:(NSInteger)watermeter_id report:(NSInteger)report_id {
+	for (Read *read in self.reads) {
 		if (read.watermerId == watermeter_id && read.reportId == report_id) {
 			return read;
 		}
@@ -112,10 +121,20 @@
 	return nil;
 }
 
+#pragma mark -
+#pragma mark IBActions methods
+
+- (IBAction)onSave:(id)sender {
+	UpdateReportRequest *updateReportRequest = [[UpdateReportRequest alloc] initWithLocation:self.locationId report:self.reportId reads:self.reads];
+	[updateReportRequest doRequest];
+	[updateReportRequest release];
+}
+
 
 - (void)dealloc {
 	[readsTableView release];
 	[report release];
+	[reads release];
 
     [super dealloc];
 }

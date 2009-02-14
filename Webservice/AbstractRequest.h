@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSMutableString *urlString;
 
 - (NSArray *)doRequest;
-- (NSArray *)doRequestUsingCache:(BOOL)useCache;
+- (NSArray *)doRequestUsingCache:(BOOL)useCache requestMethod:(NSString *)requestMethod;
 
 // Methods that should be implemented
 - (void)generateUrlString;

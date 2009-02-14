@@ -35,6 +35,7 @@
 		17E4D5D60F420250002440E9 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D5D50F420250002440E9 /* SettingsViewController.m */; };
 		17E4D6440F421BF9002440E9 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6430F421BF9002440E9 /* Settings.m */; };
 		17E4D6A10F42255A002440E9 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E4D6A00F42255A002440E9 /* Location.m */; };
+		17F9BFF40F45D19900EA969C /* UpdateReportRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F9BFF30F45D19900EA969C /* UpdateReportRequest.m */; };
 		1D3623260D0F684500981E51 /* WatermetersAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -95,6 +96,8 @@
 		17E4D6430F421BF9002440E9 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Commons/Settings.m; sourceTree = "<group>"; };
 		17E4D69F0F42255A002440E9 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Models/Location.h; sourceTree = "<group>"; };
 		17E4D6A00F42255A002440E9 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Models/Location.m; sourceTree = "<group>"; };
+		17F9BFF20F45D19900EA969C /* UpdateReportRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UpdateReportRequest.h; path = Webservice/UpdateReportRequest.h; sourceTree = "<group>"; };
+		17F9BFF30F45D19900EA969C /* UpdateReportRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UpdateReportRequest.m; path = Webservice/UpdateReportRequest.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* WatermetersAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatermetersAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* WatermetersAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatermetersAppDelegate.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				174BC0190F43177D00C00C53 /* NewReportRequest.m */,
 				178C78E50F44B5B0007780D3 /* ShowReportRequest.h */,
 				178C78E60F44B5B0007780D3 /* ShowReportRequest.m */,
+				17F9BFF20F45D19900EA969C /* UpdateReportRequest.h */,
+				17F9BFF30F45D19900EA969C /* UpdateReportRequest.m */,
 			);
 			name = Webservice;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				178C77AB0F4466DA007780D3 /* ReadCell.m in Sources */,
 				178C77B50F446A4E007780D3 /* NewReportViewController.m in Sources */,
 				178C78E70F44B5B0007780D3 /* ShowReportRequest.m in Sources */,
+				17F9BFF40F45D19900EA969C /* UpdateReportRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
