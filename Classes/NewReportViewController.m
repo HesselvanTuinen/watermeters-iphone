@@ -9,6 +9,7 @@
 #import "NewReportViewController.h"
 #import "NewReportRequest.h"
 #import "ReadCell.h"
+#import "CreateReportRequest.h"
 
 
 @implementation NewReportViewController
@@ -81,7 +82,18 @@
 }
 
 - (IBAction)onSave:(id)sender {
-	NSLog(@"save report");
+	// Create reads array
+	NSMutableArray *reads = [NSMutableArray array];
+	for (Room *room in self.report.location.rooms) {
+		for (Watermeter *watermeter in room.watermeters) {
+			[reads addObject:watermeter.read];
+		}
+	}
+	
+	// Create report
+	CreateReportRequest *createReportRequest = [[CreateReportRequest alloc] initWithLocation:self.locationId reads:reads];
+	[createReportRequest doRequest];
+	[createReportRequest release];
 }
 
 

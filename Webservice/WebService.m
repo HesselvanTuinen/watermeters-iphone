@@ -139,7 +139,7 @@ static int encodebase64(unsigned char *dst, const unsigned char *src, int length
 		} 
 		else if (auth >= 1 && data == nil) {
 			UIAlertView *nwAlert = [[UIAlertView alloc] initWithTitle:@"Network Unreachable" 
-															  message:@"To use AppReview you need to be connected to the Internet." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+															  message:@"No Internet connection available." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[nwAlert show];
 			[nwAlert release];
 			finished = YES;

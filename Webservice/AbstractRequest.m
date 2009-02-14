@@ -42,6 +42,7 @@
 		NSData *data = [[WebService sendSyncRequest:self.urlString Method:requestMethod] retain];
 		if (data && [data length] > 0) {
 			xml = [NSString stringWithCString:[data bytes] length:[data length]];
+			NSLog(@"xml:\n%@", xml);
 			[RestfulObject cacheContent:xml forURL:self.urlString]; // Cache it
 		} else {
 			NSLog(@"Failed to request");
