@@ -7,7 +7,6 @@
 //
 
 #import "ReportViewController.h"
-#import "ReadCell.h"
 #import "NewReportRequest.h"
 #import "ShowReportRequest.h"
 #import "UpdateReportRequest.h"
@@ -37,6 +36,7 @@
 	
 	self.reads = reportWithReads.reads;
 	self.navigationItem.title = reportWithReads.officialDate;
+	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
 	[showReportRequest release];
 	[reportWithReads release];
@@ -55,10 +55,7 @@
 	self.navigationItem.rightBarButtonItem = barButtonItem;
 	[barButtonItem release];
 	
-	// Resize tableview (decrease height)
-	//CGRect newFrame = [readsTableView frame];
-	//newFrame.size.height -= 210;
-	//[readsTableView setFrame:newFrame];
+	NSLog(@"height %f", readsTableView.frame.size.height);
 }
 
 /*
@@ -109,6 +106,7 @@
 	Watermeter *watermeter = [room.watermeters objectAtIndex:indexPath.row];
 	[cell setLabel:watermeter.label];
 	[cell setRead:watermeter.read];
+	cell.delegate = self;
 
     return cell;
 }
@@ -139,6 +137,22 @@
 	[[[[ShowReportRequest alloc] initWithReport:self.reportId location:self.locationId] autorelease] clearCache];
 }
 
+#pragma mark -
+#pragma mark ReadCell delegate methods
+
+// Decrease tableview height
+- (void)openKeyboard {
+	CGRect newFrame = [readsTableView frame];
+	newFrame.size.height = 200;
+	[readsTableView setFrame:newFrame];
+}
+
+// Increase tableview height
+- (void)closeKeyboard {
+	CGRect newFrame = [readsTableView frame];
+	newFrame.size.height = 410;
+	[readsTableView setFrame:newFrame];
+}
 
 - (void)dealloc {
 	[readsTableView release];

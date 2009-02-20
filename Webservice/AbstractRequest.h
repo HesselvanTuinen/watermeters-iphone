@@ -7,7 +7,7 @@
 //
 
 //#define WEBSERVICE_HOSTNAME @"http://localhost:3000"
-#define WEBSERVICE_HOSTNAME @"http://anunturirecente.ro"
+#define WEBSERVICE_HOSTNAME @"http://apometre.com"
 
 
 #import <Foundation/Foundation.h>

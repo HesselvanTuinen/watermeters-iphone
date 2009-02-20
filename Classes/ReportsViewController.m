@@ -37,13 +37,13 @@
     [super viewDidLoad];
 	
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	self.navigationItem.title = @"Reports";
+	self.navigationItem.title = @"Citiri";
 	
 	self.addressLabel.text = self.location.address;
 	self.ownerLabel.text = self.location.ownerName;
 	
 	// 'New Report' button
-	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New Report" style:UIBarButtonItemStyleBordered target:self action:@selector(onNewReport)];
+	UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Citire noua" style:UIBarButtonItemStyleBordered target:self action:@selector(onNewReport)];
 	self.navigationItem.rightBarButtonItem = barButtonItem;
 	[barButtonItem release];
 }

@@ -87,7 +87,7 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="IBUIText">Password</string>
+						<string key="IBUIText">Parola</string>
 						<reference key="IBUITextColor" ref="285780462"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
@@ -132,10 +132,10 @@
 							<int key="NSfFlags">16</int>
 						</object>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUIHighlightedTitle">Save Credentials</string>
-						<string key="IBUIDisabledTitle">Save Credentials</string>
-						<string key="IBUISelectedTitle">Save Credentials</string>
-						<string key="IBUINormalTitle">Save Credentials</string>
+						<string key="IBUIHighlightedTitle">Salveaza</string>
+						<string key="IBUIDisabledTitle">Salveaza</string>
+						<string key="IBUISelectedTitle">Salveaza</string>
+						<string key="IBUINormalTitle">Salveaza</string>
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="1019605364">
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -156,7 +156,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUINavigationItem" id="417680257">
 								<reference key="IBUINavigationBar" ref="123312153"/>
-								<string key="IBUITitle">Settings</string>
+								<string key="IBUITitle">Setari</string>
 								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="691105957">
 									<int key="IBUIStyle">1</int>
 									<int key="IBUISystemItemIdentifier">0</int>
@@ -175,10 +175,10 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="616127320"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUIHighlightedTitle">Clear Cache</string>
-						<string key="IBUIDisabledTitle">Clear Cache</string>
-						<string key="IBUISelectedTitle">Clear Cache</string>
-						<string key="IBUINormalTitle">Clear Cache</string>
+						<string key="IBUIHighlightedTitle">Goleste cache-ul</string>
+						<string key="IBUIDisabledTitle">Goleste cache-ul</string>
+						<string key="IBUISelectedTitle">Goleste cache-ul</string>
+						<string key="IBUINormalTitle">Goleste cache-ul</string>
 						<reference key="IBUIHighlightedTitleColor" ref="1019605364"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -284,10 +284,10 @@
 							<reference ref="204399821"/>
 							<reference ref="471818716"/>
 							<reference ref="281992128"/>
-							<reference ref="989773717"/>
 							<reference ref="567794804"/>
-							<reference ref="123312153"/>
 							<reference ref="820524144"/>
+							<reference ref="123312153"/>
+							<reference ref="989773717"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>

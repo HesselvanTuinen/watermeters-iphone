@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Report.h"
+#import "ReadCell.h"
 
 
-@interface ReportViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface ReportViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, ReadCellDelegate> {
 	IBOutlet UITableView *readsTableView;
 	
 	NSInteger reportId;

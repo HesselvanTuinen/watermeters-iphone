@@ -140,8 +140,8 @@ static int encodebase64(unsigned char *dst, const unsigned char *src, int length
 			finished = YES;
 		} 
 		else if (auth >= 1 && data == nil) {
-			UIAlertView *nwAlert = [[UIAlertView alloc] initWithTitle:@"Network Unreachable" 
-															  message:@"No Internet connection available." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+			UIAlertView *nwAlert = [[UIAlertView alloc] initWithTitle:@"Retea inaccesibila" 
+															  message:@"Conexiunea la Internet nu e disponibila." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 			[nwAlert show];
 			[nwAlert release];
 			finished = YES;
@@ -150,7 +150,7 @@ static int encodebase64(unsigned char *dst, const unsigned char *src, int length
 			[data autorelease];
 			
 			if (auth >= 5) {
-				UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:@"Unable to reach server" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+				UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Eroare de retea" message:@"Nu se poate accesa serverul" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 				[alert show];
 				[alert release];
 				return @"";

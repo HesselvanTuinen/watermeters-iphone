@@ -11,10 +11,12 @@
 
 @implementation ReadCell
 
-@synthesize watermeter_label, value_text_field, read;
+@synthesize watermeter_label, value_text_field, read, hideKeyboardOnReturn, delegate;
 
 - (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+		self.hideKeyboardOnReturn = YES;
+		
 		// Label
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 200, 30)];
 		label.font = [UIFont systemFontOfSize:16.0];
@@ -28,6 +30,7 @@
 		textField.borderStyle = UITextBorderStyleRoundedRect;
 		textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+		textField.delegate = self;
 		self.value_text_field = textField;
 		[self addSubview:value_text_field];
 		[textField release];
@@ -74,6 +77,25 @@
 
 - (void)onValueChanged:(id)sender {
 	self.read.value = [value_text_field.text floatValue];
+}
+
+#pragma mark -
+#pragma mark UITextField delegates
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	if (self.hideKeyboardOnReturn) {
+		[textField resignFirstResponder];
+		if (delegate && [delegate respondsToSelector:@selector(closeKeyboard)]) {
+			[delegate closeKeyboard];
+		}
+	}
+	return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+	if (delegate && [delegate respondsToSelector:@selector(openKeyboard)]) {
+		[delegate openKeyboard];
+	}
 }
 
 @end

@@ -68,6 +68,7 @@
 	Watermeter *watermeter = [room.watermeters objectAtIndex:indexPath.row];
 	[cell setLabel:watermeter.label];
 	[cell setRead:watermeter.read];
+	cell.hideKeyboardOnReturn = NO;
 	
 	if (indexPath.section == 0 && indexPath.row == 0) {
 		[cell setEditFocus];
@@ -106,7 +107,7 @@
 		[self.parentViewController dismissModalViewControllerAnimated:YES];
 	}
 	else {
-		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Create Report" message:@"Error saving the new report" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Creare citire" message:@"Eroare la salvarea citirii" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alertView show];
 		[alertView release];
 	}
