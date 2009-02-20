@@ -93,8 +93,8 @@
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-	if (delegate && [delegate respondsToSelector:@selector(openKeyboard)]) {
-		[delegate openKeyboard];
+	if (delegate && [delegate respondsToSelector:@selector(openKeyboardForCell:)]) {
+		[delegate openKeyboardForCell:self];
 	}
 }
 

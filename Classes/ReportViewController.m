@@ -111,7 +111,6 @@
     return cell;
 }
 
-
 #pragma mark -
 #pragma mark Private methods
 
@@ -141,10 +140,23 @@
 #pragma mark ReadCell delegate methods
 
 // Decrease tableview height
-- (void)openKeyboard {
+- (void)openKeyboardForCell:(ReadCell *)readCell {
 	CGRect newFrame = [readsTableView frame];
 	newFrame.size.height = 200;
 	[readsTableView setFrame:newFrame];
+	
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	
+	// Find the cell that is edited and scroll to it
+	for (Room *room in self.report.location.rooms) {
+		for (Watermeter *watermeter in room.watermeters) {
+			if (watermeter.read.pk == readCell.read.pk) { // found the cell that's being edited
+				[readsTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+			}
+			indexPath = [NSIndexPath indexPathForRow:indexPath.row+1 inSection:indexPath.section];
+		}
+		indexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section+1];
+	}
 }
 
 // Increase tableview height

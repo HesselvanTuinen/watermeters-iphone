@@ -34,7 +34,7 @@
 
 @optional
 
-- (void)openKeyboard;
+- (void)openKeyboardForCell:(ReadCell *)readCell;
 - (void)closeKeyboard;
 
 @end
